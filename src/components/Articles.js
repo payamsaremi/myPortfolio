@@ -17,9 +17,9 @@ export default function Articles({ posts }) {
                 {post.meta.tags.map((tag) => {
                   return (
                     <Link key={tag} href={`/tags/${tag}`}>
-                      <span className="mr-2 cursor-pointer text-zinc-500 hover:text-zinc-200">
+                      <a className="mr-2 cursor-pointer text-zinc-500 hover:text-zinc-200">
                         {tag}
-                      </span>
+                      </a>
                     </Link>
                   );
                 })}
