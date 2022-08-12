@@ -3,12 +3,10 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeHighlight from "rehype-highlight";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
 import YouTube from "../../src/components/Youtube";
 import Image from "next/image";
-// import "highlight.js/styles/atom-one-dark.css";
 import BlogLayout from "../../layouts/blog";
 export default function PostPage({ post }) {
   return (
@@ -47,7 +45,6 @@ export const getStaticProps = async ({ params }) => {
       format: "mdx",
     },
   });
-  console.log(mdxSource);
   return { props: { post: { source: mdxSource, meta } } };
 };
 

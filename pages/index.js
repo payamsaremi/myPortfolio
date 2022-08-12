@@ -1,17 +1,18 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
-
+import Container from "../src/components/Container";
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Payam Saremi</title>
-        <meta name="description" content="Made with 💚" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <h1>Hello! welcome to my website.</h1>
-    </div>
+    <Container
+      title={"Payam Saremi's Blog"}
+      description={"My recent works, art and ideas"}
+    >
+      <div className="flex flex-row">
+        <div className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
+          <h1 className="font-bold text-5xl mb-2">Payam Saremi</h1>
+          <p className="text-gray-200">Developer, Designer, Maker, Artist.</p>
+        </div>
+      </div>
+    </Container>
   );
 }
