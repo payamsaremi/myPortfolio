@@ -8,11 +8,8 @@ export default function Articles({ posts }) {
         </h1>
         {posts.map((post) => {
           return (
-            <Link href={`blog/${post.meta.slug}`}>
-              <div
-                className="mb-6 w-full rounded-sm bg-gray-900 cursor-pointer"
-                key={post.meta.slug}
-              >
+            <Link href={`blog/${post.meta.slug}`} key={post.meta.slug}>
+              <div className="mb-6 w-full rounded-sm bg-gray-900 cursor-pointer">
                 <a>
                   <h1 className="font-bold text-2xl mb-1">{post.meta.title}</h1>
                 </a>
