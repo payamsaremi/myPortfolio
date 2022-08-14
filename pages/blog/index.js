@@ -1,7 +1,7 @@
-import { getAllPosts } from "../../src/api";
-import Articles from "../../src/components/Articles";
+import { getAllPosts } from "../../src/blog/api";
+import Articles from "../../components/Articles";
 import Head from "next/head";
-import Container from "../../src/components/Container";
+import Container from "../../components/Container";
 export default function Blog({ posts }) {
   return (
     <>

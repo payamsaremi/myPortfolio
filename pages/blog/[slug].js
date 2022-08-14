@@ -1,11 +1,11 @@
-import { getPostBySlug, getSlugs } from "../../src/api";
+import { getPostBySlug, getSlugs } from "../../src/blog/api";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
-import YouTube from "../../src/components/Youtube";
+import YouTube from "../../components/Youtube";
 import Image from "next/image";
 import BlogLayout from "../../layouts/blog";
 export default function PostPage({ post }) {

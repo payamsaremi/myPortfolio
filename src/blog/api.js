@@ -3,7 +3,7 @@ import fs from "fs";
 import { sync } from "glob";
 import matter from "gray-matter";
 
-const POSTS_PATH = path.join(process.cwd(), "src/posts");
+const POSTS_PATH = path.join(process.cwd(), "src/blog/posts");
 
 export const getSlugs = () => {
   const paths = sync(`${POSTS_PATH}/*.mdx`);
@@ -28,6 +28,8 @@ export const getPostBySlug = (slug) => {
       title: data.title ?? slug,
       tags: (data.tags ?? []).sort(),
       date: (data.date ?? new Date()).toString(),
+      isPublic: data.isPublic ?? false,
+      coverImage: data.coverImage ?? "",
     },
   };
 };
