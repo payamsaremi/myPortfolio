@@ -1,7 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
+import Articles from "../components/Articles";
 import Container from "../components/Container";
-export default function Home() {
+import TopArticles from "../components/TopArticles";
+import { getAllPosts } from "../src/blog/api";
+export default function Home({ posts }) {
   return (
     <Container
       title={"Payam Saremi's Blog"}
@@ -15,4 +18,14 @@ export default function Home() {
       </div>
     </Container>
   );
+}
+
+export async function getStaticProps() {
+  const posts = getAllPosts().slice(0, 9);
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }
