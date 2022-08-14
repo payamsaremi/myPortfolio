@@ -23,6 +23,7 @@ export default function TopArticles({ posts }) {
             if (index < 1) return;
             return (
               <SideFeaturedArticles
+                key={post.meta.slug}
                 title={post.meta.title}
                 excerpt={truncate(post.meta.excerpt, 60)}
                 coverImage={post.meta.coverImage}
