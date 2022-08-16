@@ -38,8 +38,11 @@ export const getAllPosts = () => {
   const posts = getSlugs()
     .map((slug) => getPostBySlug(slug))
     .sort((a, b) => {
-      if (a.meta.date > b.meta.date) return 1;
-      if (a.meta.date < b.meta.date) return -1;
+      const t1 = new Date(a.meta.date).getTime();
+      const t2 = new Date(b.meta.date).getTime();
+      console.log("a.meta.date", a.meta.date);
+      if (t1 > t2) return 1;
+      if (t1 < t2) return -1;
       return 0;
     })
     .reverse();

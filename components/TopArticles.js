@@ -1,13 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function TopArticles({ posts }) {
+export default function TopArticles({ topPosts }) {
   function truncate(str, max) {
     return str.length > max ? str.substr(0, max - 1) + "…" : str;
   }
-
-  const topPosts = Object.values(posts).filter((post) => {
-    return post.meta.isPublic === true;
-  });
 
   return (
     <>
@@ -46,14 +42,14 @@ const SideFeaturedArticles = ({ title, coverImage, excerpt, slug }) => {
             src={coverImage ? coverImage : "/images/placeholder.jpeg"}
             layout="fixed"
             width={"150"}
-            height={"90"}
+            height={"100s"}
             objectFit="cover"
             className="rounded-md"
           />
         </div>
         <div className="flex flex-col w-full">
           <a>
-            <h1 className="font-bold text-md mb-1">{title}</h1>
+            <h1 className="font-bold text-xl mb-1">{title}</h1>
           </a>
           <p className="text-md text-gray-300 text-sm ">{excerpt}</p>
         </div>
@@ -73,6 +69,7 @@ const MainFeaturedArticle = ({ title, coverImage, excerpt, slug }) => {
               layout="fill"
               objectFit="cover"
               className="rounded-md"
+              priority
             />
           </div>
           <div className="m-2">
