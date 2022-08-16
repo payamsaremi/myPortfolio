@@ -9,6 +9,11 @@ module.exports = {
       },
     ];
   },
+  experimental: {
+    legacyBrowsers: false,
+    browsersListForSwc: true,
+    images: { allowFutureImage: true },
+  },
 };
 
 // https://nextjs.org/docs/advanced-features/security-headers

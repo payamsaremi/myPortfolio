@@ -6,19 +6,16 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
 import YouTube from "../../components/Youtube";
-import Image from "next/image";
+import Image from "next/future/image";
 import BlogLayout from "../../layouts/blog";
+import components from "../../components/MDXComponents";
+// import rehypeImgSize from "rehype-img-size";
+
 export default function PostPage({ post }) {
   return (
     <>
       <BlogLayout meta={post.meta}>
-        <MDXRemote
-          {...post.source}
-          components={{
-            YouTube,
-            Image,
-          }}
-        />
+        <MDXRemote {...post.source} components={components} />
       </BlogLayout>
     </>
   );
