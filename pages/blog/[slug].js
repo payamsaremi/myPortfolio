@@ -1,4 +1,4 @@
-import { getPostBySlug, getSlugs } from "../../src/blog/api";
+import { getPostBySlug, getSlugs } from "../../data/blog/api";
 import { MDXRemote } from "next-mdx-remote";
 import BlogLayout from "../../layouts/blog";
 import components from "../../components/MDXComponents";

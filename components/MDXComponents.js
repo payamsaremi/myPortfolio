@@ -9,8 +9,8 @@ function FilledImage(props) {
       className="rounded-md"
       sizes="100vw"
       src={props.src}
-      // placeholder="blur"
-      // blurDataURL={"/images/blog/moon-river.jpg"}
+      placeholder="blur"
+      blurDataURL={"/images/placeholder-blur.jpg"}
       {...props}
     />
   );

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Articles from "../components/Articles";
 import Container from "../components/Container";
 import TopArticles from "../components/TopArticles";
-import { getAllPosts } from "../src/blog/api";
+import { getAllPosts } from "../data/blog/api";
 export default function Home({ posts }) {
   return (
     <Container

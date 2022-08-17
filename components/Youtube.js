@@ -1,11 +1,12 @@
-export default function YouTube({ id }) {
-  return (
-    <div>
-      <iframe
-        src={`https://www.youtube.com/embed/${id}`}
-        allow="autoplay; encrypted-media"
-        title="Embedded YouTube video"
-      />
-    </div>
-  );
+import React, { useEffect, useState } from "react";
+import ReactPlayer from "react-player";
+
+export default function YouTube({ url }) {
+  const [hasWindow, setHasWindow] = useState(false);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setHasWindow(true);
+    }
+  }, []);
+  return <>{hasWindow && <ReactPlayer url={url} />}</>;
 }
