@@ -11,7 +11,7 @@ export default function Articles({ posts }) {
   return (
     <>
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-8">
-        <h1 className="mb-12 text-4xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+        <h1 className="mb-12 text-4xl font-bold tracking-tight text-black md:text-6xl dark:text-white">
           Stories {"&"} Ideas
         </h1>
         <TopArticles topPosts={topPosts} />

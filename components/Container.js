@@ -36,7 +36,7 @@ export default function Container({ children, ...customMeta }) {
       <div className="flex flex-col justify-center px-8">
         <Navbar />
       </div>
-      <main className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900">
+      <main className="px-8 bg-gray-50 dark:bg-gray-900">
         {children}
         {/* <Footer /> */}
       </main>
