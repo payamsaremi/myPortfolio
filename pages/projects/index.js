@@ -58,6 +58,7 @@ export default function Projects() {
               {projectData.map((project) => {
                 return (
                   <ProjectCard
+                    key={project.id}
                     title={project.title}
                     description={project.description}
                     coverImage={project.coverImage}
