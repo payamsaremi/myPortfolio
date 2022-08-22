@@ -37,7 +37,7 @@ export default function Projects() {
               <div className="flex max-w-md">
                 <p className="text-4xl font-light text-brand-400 leading-9">
                   <span className="text-5xl font-semibold text-brand-200 ">
-                    Payam Saremi's
+                    {"Payam Saremi's"}
                   </span>{" "}
                   <span>
                     {" "}
