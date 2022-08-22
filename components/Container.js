@@ -33,10 +33,9 @@ export default function Container({ children, ...customMeta }) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <div className="flex flex-col justify-center px-8">
+      <main className="px-6 bg-gray-50 dark:bg-gray-900">
         <Navbar />
-      </div>
-      <main className="px-8 bg-gray-50 dark:bg-gray-900">
+
         {children}
         {/* <Footer /> */}
       </main>
