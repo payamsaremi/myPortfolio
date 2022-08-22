@@ -15,6 +15,11 @@
 # production
 /build
 
+# Morning Pages
+/data/blog/morning-pages
+/data/blog/questions
+/data/blog/posts/*
+
 # misc
 .DS_Store
 *.pem
