@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document(props) {
   return (
-    <Html lang="en" class="dark">
+    <Html lang="en" class="light">
       <Head>
         {/* <link
           rel="preload"
@@ -13,7 +13,17 @@ export default function Document(props) {
         /> */}
         <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
         <link href="/static/favicons/site.webmanifest" rel="manifest" />
-        <meta content="#ffffff" name="theme-color" />
+        <meta
+          name="theme-color"
+          content="#f9fafb"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#111111"
+          media="(prefers-color-scheme: dark)"
+        />
+        {/* <meta content="#ffffff" name="theme-color" /> */}
         <meta content="#ffffff" name="msapplication-TileColor" />
         {/* <link
           href="/static/favicons/apple-touch-icon.png"

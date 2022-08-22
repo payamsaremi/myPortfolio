@@ -32,7 +32,7 @@ export default function Projects() {
       >
         <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-8 ">
           <div className="flex flex-col md:flex-row justify-between mb-16 w-full">
-            <h1 className="text-8xl md:text-7xl font-bold mb-4">Projects</h1>
+            <h1 className="text-7xl md:text-7xl font-bold mb-4">Projects</h1>
             <div className="flex flex-row max-w-xs justify-between items-end">
               <div className="flex max-w-md">
                 <p className="text-4xl font-light text-brand-400 leading-9">
