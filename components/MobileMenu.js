@@ -41,7 +41,7 @@ export default function MobileMenu() {
         className="absolute top-0 left-0 bottom-0 w-full bg-brand-200 dark:bg-gray-800"
         variants={sidebar}
       />
-      <MobileMenuNavigation toggle={() => toggleOpen()} />
+      <MobileMenuNavigation />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
   );
