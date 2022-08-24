@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <nav className="flex flex-row items-center justify-between max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-5 sm:pb-16  text-gray-900 bg-opacity-60 dark:text-gray-100">
       <div className="ml-[-0.60rem]">
-        <MobileMenu />
+        {/* <MobileMenu /> */}
 
         <NavItem href="/" text="Home" />
         <NavItem href="/blog" text="Blog" />
