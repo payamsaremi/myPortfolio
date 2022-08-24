@@ -43,7 +43,7 @@ export default function MobileMenu() {
     >
       <AnimatePresence>
         {isOpen && (
-          <motion.div className="absolute  top-0 left-0 bottom-0 w-full bg-brand-200 dark:bg-gray-800">
+          <motion.div className="fixed  top-0 left-0 bottom-0 w-full bg-brand-200 dark:bg-gray-800">
             <MobileMenuNavigation toggle={() => toggleOpen()} />
           </motion.div>
         )}
