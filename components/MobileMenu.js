@@ -5,50 +5,67 @@ import { MenuToggle } from "./MobileMenueToggle";
 import { useDimensions } from "../hooks/useDimentions";
 import MobileMenuNavigation from "./MobileMenuNavigation";
 
-const sidebar = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 20}px at 30px 30px)`,
-    transition: {
-      type: "spring",
-      stiffness: 20,
-      restDelta: 2,
-    },
-  }),
-  closed: {
-    clipPath: "circle(18px at 46px 41px)",
-    transition: {
-      delay: 0.3,
-      type: "spring",
-      stiffness: 500,
-      damping: 40,
-    },
-  },
-};
-
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const containerRef = useRef(null);
-  const { height } = useDimensions(containerRef);
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
+
+  const links = [
+    { href: "/", title: "Home" },
+    { href: "/blog", title: "Blog" },
+    { href: "/projects", title: "Projects" },
+  ];
+
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.2,
+        staggerDirection: -1,
+        delay: 0.2,
+      },
+    },
+    open: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        staggerDirection: 1,
+      },
+    },
+  };
+  const itemVariants = {
+    open: {
+      opacity: 1,
+    },
+    closed: {
+      opacity: 0,
+    },
+  };
   return (
-    <motion.nav
-      className="absolute z-50 top-0 bottom-0 left-0 w-full md:hidden"
-      initial={"closed"}
-      animate={isOpen ? "open" : "closed"}
-      variants={sidebar}
-      custom={height}
-      ref={containerRef}
-    >
+    <motion.nav>
+      <MenuToggle toggle={() => toggleOpen()} isOpen={isOpen} />
       <AnimatePresence>
         {isOpen && (
-          <motion.div className="fixed  top-0 left-0 bottom-0 w-full bg-brand-200 dark:bg-gray-800">
-            <MobileMenuNavigation toggle={() => toggleOpen()} />
+          <motion.div
+            initial={"closed"}
+            animate={isOpen ? "open" : "closed"}
+            variants={menuVariants}
+            exit={"closed"}
+            className={"absolute z-50 top-60 p-2 bg-red-600"}
+          >
+            {links.map((link) => (
+              <motion.div
+                key={link.href}
+                variants={itemVariants}
+                whileHover={{ scale: 1.1 }}
+                className={"bg-green-600 cursor-pointer mb-2 px-5 py-2"}
+              >
+                {link.title}
+              </motion.div>
+            ))}
           </motion.div>
         )}
-
-        <MenuToggle toggle={() => toggleOpen()} />
       </AnimatePresence>
     </motion.nav>
   );
