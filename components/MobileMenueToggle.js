@@ -14,7 +14,7 @@ const Path = (props) => (
 export const MenuToggle = ({ toggle, isOpen }) => (
   <motion.div initial={"closed"} animate={isOpen ? "open" : "closed"}>
     <button
-      className="cursor-pointer absolute outline-none border-none top-7 left-9"
+      className="cursor-pointer absolute outline-none border-none top-8 left-7"
       onClick={toggle}
     >
       <svg width="20" height="20" viewBox="0 0 23 23">

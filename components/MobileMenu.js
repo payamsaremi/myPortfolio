@@ -23,7 +23,7 @@ export default function MobileMenu() {
       clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
       transition: {
         type: "spring",
-        stiffness: 20,
+        stiffness: 15,
         restDelta: 2,
         staggerChildren: 0.2,
         staggerDirection: 1,
@@ -79,7 +79,7 @@ export default function MobileMenu() {
             custom={height}
             exit={"closed"}
             className={
-              "absolute top-0 left-0 bottom-0 z-10 p-2 w-full bg-gray-800 overflow-hidden"
+              "absolute pt-10 top-0 left-0 bottom-0 z-10 p-2 w-full bg-gray-900/60 overflow-hidden backdrop-blur-md"
             }
           >
             {links.map((link) => (
@@ -87,7 +87,7 @@ export default function MobileMenu() {
                 key={link.href}
                 variants={itemVariants}
                 whileHover={{ scale: 1.1 }}
-                className={`bg-gray-800 cursor-pointer mb-2 px-10 py-2 rounded-md `}
+                className={`cursor-pointer mb-2 px-10 py-2 rounded-md `}
                 onClick={() => toggleOpen()}
               >
                 <NextLink href={link.href}>
