@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { FiMenu } from "react-icons/fi";
-import { motion, useCycle } from "framer-motion";
+import { motion, useCycle, AnimatePresence } from "framer-motion";
 import { MenuToggle } from "./MobileMenueToggle";
 import { useDimensions } from "../hooks/useDimentions";
 import MobileMenuNavigation from "./MobileMenuNavigation";
@@ -26,23 +26,30 @@ const sidebar = {
 };
 
 export default function MobileMenu() {
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <motion.nav
       className="absolute z-50 top-0 bottom-0 left-0 w-full md:hidden"
-      initial={false}
+      initial={"closed"}
       animate={isOpen ? "open" : "closed"}
+      variants={sidebar}
       custom={height}
       ref={containerRef}
     >
-      <motion.div
-        className="absolute top-0 left-0 bottom-0 w-full bg-brand-200 dark:bg-gray-800"
-        variants={sidebar}
-      />
-      <MobileMenuNavigation />
-      <MenuToggle toggle={() => toggleOpen()} />
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div className="absolute  top-0 left-0 bottom-0 w-full bg-brand-200 dark:bg-gray-800">
+            <MobileMenuNavigation toggle={() => toggleOpen()} />
+          </motion.div>
+        )}
+
+        <MenuToggle toggle={() => toggleOpen()} />
+      </AnimatePresence>
     </motion.nav>
   );
 }

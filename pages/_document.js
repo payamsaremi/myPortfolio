@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document(props) {
   return (
-    <Html lang="en" class="light">
+    <Html lang="en" className="dark">
       <Head>
         {/* <link
           rel="preload"

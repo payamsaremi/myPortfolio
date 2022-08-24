@@ -15,11 +15,11 @@ const links = [
   { href: "/projects", title: "Projects" },
 ];
 
-export default function MobileMenuNavigation() {
+export default function MobileMenuNavigation({ toggle }) {
   return (
     <motion.ul className="absolute top-28 w-full" variants={variants}>
       {links.map((link) => (
-        <div key={link.href}>
+        <div key={link.href} toggle={toggle}>
           <MenuItem link={link} />
         </div>
       ))}
