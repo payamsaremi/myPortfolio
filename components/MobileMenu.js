@@ -63,6 +63,7 @@ export default function MobileMenu() {
                   className={
                     "bg-gray-900 cursor-pointer mb-2 px-5 py-2 rounded-md"
                   }
+                  onClick={() => toggleOpen()}
                 >
                   <NextLink href={link.href}>{link.title}</NextLink>
                 </motion.div>
