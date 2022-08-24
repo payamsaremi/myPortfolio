@@ -19,7 +19,7 @@ export default function MobileMenuNavigation({ toggle }) {
   return (
     <motion.ul className="absolute top-28 w-full" variants={variants}>
       {links.map((link) => (
-        <div key={link.href} toggle={toggle}>
+        <div key={link.href} onClick={toggle}>
           <MenuItem link={link} />
         </div>
       ))}
