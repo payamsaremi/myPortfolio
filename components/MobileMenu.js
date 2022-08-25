@@ -3,8 +3,7 @@ import { FiMenu } from "react-icons/fi";
 import { motion, useCycle, AnimatePresence } from "framer-motion";
 import { MenuToggle } from "./MobileMenueToggle";
 import { useDimensions } from "../hooks/useDimentions";
-import MobileMenuNavigation from "./MobileMenuNavigation";
-import NextLink from "next/link";
+import NavItem from "./NavItem";
 export default function MobileMenu() {
   const { width, height } = useDimensions();
   const [isOpen, setIsOpen] = useState(false);
@@ -59,18 +58,15 @@ export default function MobileMenu() {
               "absolute pt-10 top-0 left-0 bottom-0 z-10 p-2 w-full bg-gray-900/60 overflow-hidden backdrop-blur-md"
             }
           >
-            {links.map((link) => (
-              <motion.div
-                key={link.href}
-                variants={itemVariants}
-                className={`cursor-pointer mb-2 px-10 py-2 rounded-md `}
-                onClick={() => toggleOpen()}
-              >
-                <NextLink href={link.href}>
-                  <p className="text-xl">{link.title}</p>
-                </NextLink>
-              </motion.div>
-            ))}
+            <motion.div
+              variants={itemVariants}
+              className={`cursor-pointer mb-2 px-10 py-2 rounded-md `}
+              onClick={() => toggleOpen()}
+            >
+              <NavItem href="/" text="Home" size={"2xl"} />
+              <NavItem href="/blog" text="Blog" size={"2xl"} />
+              <NavItem href="/projects" text="Projects" size={"2xl"} />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
