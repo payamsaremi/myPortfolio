@@ -18,30 +18,6 @@ export default function MobileMenu() {
     { href: "/projects", title: "Projects" },
   ];
 
-  const sidebar = {
-    open: (height = 1000) => ({
-      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-      transition: {
-        type: "spring",
-        stiffness: 15,
-        restDelta: 2,
-        staggerChildren: 0.2,
-        staggerDirection: 1,
-      },
-    }),
-    closed: {
-      clipPath: "circle(30px at 40px 40px)",
-      transition: {
-        delay: 0.5,
-        type: "spring",
-        stiffness: 400,
-        damping: 40,
-        staggerChildren: 0.2,
-        staggerDirection: -1,
-      },
-    },
-  };
-
   const menuVariants = {
     closed: {
       opacity: 0,
@@ -75,9 +51,10 @@ export default function MobileMenu() {
           <motion.div
             initial={"closed"}
             animate={isOpen ? "open" : "closed"}
-            variants={sidebar}
+            variants={menuVariants}
             custom={height}
             exit={"closed"}
+            onClick={() => toggleOpen()}
             className={
               "absolute pt-10 top-0 left-0 bottom-0 z-10 p-2 w-full bg-gray-900/60 overflow-hidden backdrop-blur-md"
             }
@@ -86,7 +63,6 @@ export default function MobileMenu() {
               <motion.div
                 key={link.href}
                 variants={itemVariants}
-                whileHover={{ scale: 1.1 }}
                 className={`cursor-pointer mb-2 px-10 py-2 rounded-md `}
                 onClick={() => toggleOpen()}
               >
