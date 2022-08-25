@@ -7,6 +7,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@capsizecss/core": "^3.0.0",
     "classnames": "^2.3.1",
     "framer-motion": "^7.2.0",
     "glob": "^8.0.3",

@@ -4,6 +4,7 @@ import { motion, useCycle, AnimatePresence } from "framer-motion";
 import { MenuToggle } from "./MobileMenueToggle";
 import { useDimensions } from "../hooks/useDimentions";
 import NavItem from "./NavItem";
+import { FiGithub } from "react-icons/fi";
 export default function MobileMenu() {
   const { width, height } = useDimensions();
   const [isOpen, setIsOpen] = useState(false);
@@ -55,17 +56,21 @@ export default function MobileMenu() {
             exit={"closed"}
             onClick={() => toggleOpen()}
             className={
-              "absolute pt-10 top-0 left-0 bottom-0 z-10 p-2 w-full bg-gray-900/60 overflow-hidden backdrop-blur-md"
+              "fixed inset-0 top-0 left-0 right-0 pt-10 w-full h-full overscroll-contain bg-gray-900/80 overflow-hidden backdrop-blur-md"
             }
           >
             <motion.div
               variants={itemVariants}
-              className={`cursor-pointer mb-2 px-10 py-2 rounded-md `}
+              className={`flex flex-col justify-center items-center cursor-pointer mb-2 px-10 py-2 rounded-md`}
               onClick={() => toggleOpen()}
             >
               <NavItem href="/" text="Home" size={"2xl"} />
               <NavItem href="/blog" text="Blog" size={"2xl"} />
               <NavItem href="/projects" text="Projects" size={"2xl"} />
+              <FiGithub
+                size={"20"}
+                className={"text-gray-500 hover:text-gray-300 cursor-pointer"}
+              />
             </motion.div>
           </motion.div>
         )}

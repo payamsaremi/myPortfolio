@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 
-@font-face {
+/* @font-face {
   font-family: 'Edu VIC WA NT Beginner';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/eduvicwantbeginner/v1/jiz2RF1BuW9OwcnNPxLl4KfZCHd9nFtd5Tu7stCpElYpvPfZZ-OllMmCVQ7LlPGQh1g.woff) format('woff');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+} */
 
 ::selection {
   background-color: #8c47f3;
@@ -27,20 +27,6 @@ html {
   flex-direction: column;
   min-height: 100vh;
 }
-
-/* https://seek-oss.github.io/capsize/ */
-.capsize::before {
-  content: '';
-  margin-bottom: -0.098em;
-  display: table;
-}
-
-.capsize::after {
-  content: '';
-  margin-top: -0.219em;
-  display: table;
-}
-
 
 .prose .anchor {
   @apply absolute invisible no-underline;
