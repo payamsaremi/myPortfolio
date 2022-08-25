@@ -29,12 +29,10 @@ export default function ProjectCard({ title, description, coverImage }) {
         <Image
           width={400}
           height={10}
-          alt={"proj-name"}
+          alt={title}
           className="rounded-md"
           sizes="100vw"
           src={coverImage}
-          placeholder="blur"
-          blurDataURL={"/images/placeholder-blur.jpg"}
         />
       </div>
     </div>

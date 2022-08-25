@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 export default function TopArticles({ topPosts }) {
   function truncate(str, max) {
@@ -36,20 +36,19 @@ export default function TopArticles({ topPosts }) {
 const SideFeaturedArticles = ({ title, coverImage, excerpt, slug }) => {
   return (
     <Link href={`blog/${slug}`} key={slug}>
-      <div className="flex flex-row mb-2 m-1 cursor-pointer md:ml-4 w-full">
-        <div className={"mr-4 rounded-md relative"}>
+      <div className="flex flex-row justify-center items-center mb-2 cursor-pointer md:ml-4 w-full">
+        <div className="mr-2 ">
           <Image
-            src={coverImage ? coverImage : "/images/placeholder.jpeg"}
-            layout="fixed"
-            width={"150"}
-            height={"100s"}
-            objectFit="cover"
-            className="rounded-md"
+            width={200}
+            height={200}
+            alt={title}
+            className="rounded-md w-48 h-40 md:w-32 md:h-28 object-cover"
+            src={coverImage}
           />
         </div>
         <div className="flex flex-col w-full">
           <a>
-            <h1 className="font-bold text-xl mb-1">{title}</h1>
+            <h1 className="font-bold text-2xl mb-1">{title}</h1>
           </a>
           <p className="text-md text-gray-300 text-sm ">{excerpt}</p>
         </div>
@@ -63,13 +62,14 @@ const MainFeaturedArticle = ({ title, coverImage, excerpt, slug }) => {
     <>
       <Link href={`blog/${slug}`} key={slug}>
         <div className="flex flex-col w-full md:w-1/2 rounded-md mb-4 md:mb-0 border-indigo-400/30 border shadow-2xl shadow-indigo-900/20 p-3 cursor-pointer">
-          <div className={"mb-4 w-full h-52 rounded-md relative "}>
+          <div className={"mb-4 rounded-md"}>
             <Image
-              src={coverImage ? coverImage : "/images/placeholder.jpeg"}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-md"
+              width={200}
+              height={200}
+              alt={title}
+              className="rounded-md w-full h-full object-cover"
               priority
+              src={coverImage}
             />
           </div>
           <div className="m-2">

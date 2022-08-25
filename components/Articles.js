@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import TopArticles from "./TopArticles";
 export default function Articles({ posts }) {
   const topPosts = Object.values(posts)
