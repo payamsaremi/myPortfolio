@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import Articles from "../components/Articles";
+import Articles from "../components/blog/Articles";
 import Container from "../components/Container";
-import TopArticles from "../components/TopArticles";
+import TopArticles from "../components/blog/TopArticles";
 import { getAllPosts } from "../data/blog/api";
 export default function Home({ posts }) {
   return (

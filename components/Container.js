@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Navbar from "./Navbar";
+import Navbar from "./navigation/Navbar";
 export default function Container({ children, ...customMeta }) {
   const router = useRouter();
   const meta = {

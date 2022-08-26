@@ -1,5 +1,5 @@
 import { getAllPosts } from "../../data/blog/api";
-import Articles from "../../components/Articles";
+import Articles from "../../components/blog/Articles";
 import Container from "../../components/Container";
 export default function Blog({ posts }) {
   return (

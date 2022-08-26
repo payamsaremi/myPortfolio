@@ -1,5 +1,5 @@
 import Container from "../../components/Container";
-import ProjectCard from "../../components/ProjectCard";
+import ProjectCard from "../../components/projects/ProjectCard";
 export default function Projects() {
   const projectData = [
     {
