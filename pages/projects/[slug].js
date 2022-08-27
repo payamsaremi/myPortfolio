@@ -39,7 +39,7 @@ export function ProjectMainScreen({ mainImage, title, description }) {
   };
 
   return (
-    <div className="flex flex-row-reverse justify-between bg-gray-800  w-full h-screen">
+    <div className="flex flex-row-reverse items-end justify-between bg-gray-800  w-full h-screen">
       <div className="md:w-3/4">
         <Image
           width={1200}
@@ -61,7 +61,6 @@ export function ProjectMainScreen({ mainImage, title, description }) {
           <StackTag name={"Javascript"} bgColor={"bg-yellow-500"} />
           <StackTag name={"React"} bgColor={"bg-blue-600"} color={"blue"} />
           <StackTag name={"Nextjs"} bgColor={"bg-gray-900"} />
-          <StackTag name={"Tailwind"} bgColor={"bg-indigo-600"} />
           <StackTag name={"MDX"} bgColor={"bg-teal-600"} />
         </div>
       </div>
@@ -72,16 +71,11 @@ export function ProjectMainScreen({ mainImage, title, description }) {
               <h1 className="text-4xl font-normal text-gray-100 text-left ">
                 {title}
               </h1>
-              <p className="text-normal text-gray-200 mt-2">{description}</p>
+              {/* <p className="text-normal text-gray-200 mt-2">{description}</p> */}
               <div className="flex flex-wrap justify-start items-start mt-2">
                 <StackTag name={"Javascript"} bgColor={"bg-yellow-500"} />
-                <StackTag
-                  name={"React"}
-                  bgColor={"bg-blue-600"}
-                  color={"blue"}
-                />
+                <StackTag name={"React"} bgColor={"bg-blue-600"} />
                 <StackTag name={"Nextjs"} bgColor={"bg-gray-900"} />
-                <StackTag name={"Tailwind"} bgColor={"bg-indigo-600"} />
                 <StackTag name={"MDX"} bgColor={"bg-teal-600"} />
               </div>
             </motion.div>
