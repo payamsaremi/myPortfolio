@@ -1,7 +1,13 @@
 import Image from "next/future/image";
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
-export default function ProjectMainScreen({ mainImage, title, description }) {
+import NextLink from "next/link";
+export default function ProjectMainScreen({
+  mainImage,
+  title,
+  description,
+  liveSite,
+}) {
   const transitionValues = {
     duration: 1,
     yoyo: Infinity,
@@ -17,17 +23,22 @@ export default function ProjectMainScreen({ mainImage, title, description }) {
           alt={title}
           className="object-cover w-full h-full"
           src={mainImage}
-          sizes="100vw"
           priority
         />
       </div>
-      <div className="hidden md:flex flex-col justify-end items-start md:w-1/4 p-5 mt-20">
+      <div className="hidden md:flex flex-col justify-between items-start md:w-1/4 p-5 mt-20 ">
         <motion.div className="max-w-sm">
+          <a className="cursor-pointer" href={liveSite}>
+            <div className="flex justify-start items-center bg-gray-900 px-2 py-1 mb-1 w-44 rounded-md font-mono">
+              <div className="bg-green-500 w-2 h-2 rounded-full mr-3"></div>
+              <p>View live site</p>
+            </div>
+          </a>
           <h1 className="text-4xl font-normal text-gray-100 text-left ">
             {title}
           </h1>
+          <p className="text-normal text-gray-300 mt-2 ">{description}</p>
         </motion.div>
-        <p className="text-normal text-gray-300 mt-2">{description}</p>
       </div>
       <div className="absolute bottom-0 w-full">
         <div className="flex p-6 justify-between items-center">

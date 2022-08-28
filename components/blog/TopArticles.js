@@ -7,7 +7,7 @@ export default function TopArticles({ topPosts }) {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto mb-16 ">
+      <div className="flex flex-col md:flex-row items-center justify-between max-w-3xl mx-auto mb-16 ">
         <MainFeaturedArticle
           title={topPosts[0].meta.title}
           excerpt={truncate(topPosts[0].meta.excerpt, 60)}

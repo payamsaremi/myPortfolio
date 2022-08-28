@@ -13,7 +13,7 @@ export default function Home({ posts }) {
       description={"My recent works, art and ideas"}
     >
       <div className="flex flex-row">
-        <div className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
+        <div className="flex flex-col items-start justify-center w-full max-w-3xl mx-auto mb-16">
           <h1 className="font-thin text-6xl mb-2">Payam Saremi</h1>
           <p className="text-gray-200 text-2xl"> Developer, Designer, Maker</p>
         </div>

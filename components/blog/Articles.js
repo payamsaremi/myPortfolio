@@ -9,7 +9,7 @@ export default function Articles({ posts }) {
 
   return (
     <>
-      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-8">
+      <div className="flex flex-col items-start justify-center max-w-3xl mx-auto mb-8">
         <h1 className="mb-12 text-7xl font-bold tracking-tight text-black md:text-6xl dark:text-white">
           Stories {"&"} Ideas
         </h1>
@@ -20,11 +20,13 @@ export default function Articles({ posts }) {
           if (topPosts.includes(post)) return;
           return (
             <Link href={`blog/${post.meta.slug}`} key={post.meta.slug}>
-              <div className="mb-6 w-full rounded-sm bg-gray-900 cursor-pointer">
+              <div className="mb-6 w-full rounded-sm cursor-pointer">
                 <a>
                   <h1 className="font-bold text-2xl mb-1">{post.meta.title}</h1>
                 </a>
-                <p className="text-md text-gray-300">{post.meta.excerpt}</p>
+                <p className="text-md text-gray-400 dark:text-gray-300">
+                  {post.meta.excerpt}
+                </p>
               </div>
             </Link>
           );

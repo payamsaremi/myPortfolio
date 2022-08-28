@@ -9,12 +9,12 @@ export default function BlogLayout({ children, meta, readingTime }) {
       date={new Date(meta.date).toISOString()}
       type="article"
     >
-      <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
+      <article className="flex flex-col items-start justify-center w-full max-w-3xl mx-auto mb-16">
         <div className="flex justify-between items-baseline w-full">
           <div className="flex flex-row justify-start items-center ">
             <Avatar image={"/images/payam-avatar.jpg"} size={"35"} />
             <div className="ml-2">
-              <p className="text-gray-200 font-mono text-sm mr-2">
+              <p className="dark:text-gray-20 text-brand-800 font-mono text-sm mr-2">
                 Payam Saremi
               </p>
               <p className="text-gray-400 font-mono text-xs">
