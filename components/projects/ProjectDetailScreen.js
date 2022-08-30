@@ -1,32 +1,41 @@
 import Image from "next/future/image";
 import { motion } from "framer-motion";
 import StackTag from "../StackTag";
+import cn from "classnames";
 
 export default function ProjectDetailScreen({ mainImage, title, description }) {
+  const bgColor = "white";
   return (
-    <div className="flex flex-col justify-center items-start w-full h-screen max-w-full  bg-zinc-900 ">
-      <div className="flex flex-col lg:flex-row justify-between items-start h-full w-full">
-        <div className="h-1/2 lg:h-full w-full lg:w-3/4 ">
+    <div
+      className={cn(
+        "flex flex-col justify-center items-start w-full h-screen max-w-full bg-black "
+      )}
+    >
+      <div className="flex flex-col-reverse lg:flex-row justify-between items-start h-full w-full ">
+        <div className="h-1/2  w-full lg:h-full lg:w-2/4 ">
           <Image
-            width={800}
-            height={800}
+            width={1200}
+            height={1200}
             alt={title}
-            className="lg:rounded-none object-cover xl:object-cover w-full h-full"
-            sizes="100vw"
+            className="object-cover w-full h-full bg-gray-900 md:rounded-md"
             src={mainImage}
           />
         </div>
-        <div className="flex lg:w-1/4 w-full h-1/2 lg:h-full  justify-between items-center bg-zinc-900 px-5">
-          <div className="flex flex-col justify-between items-start lg:max-w-lg h-full w-full py-5">
-            <div>
-              <h2 className="text-5xl w-full mb-4">{title}</h2>
-              <p className="text-gray-300 text-lg">{description}</p>
+        <div className="flex lg:w-2/4 w-full h-1/2 lg:h-full justify-between items-center">
+          <div className="flex flex-col justify-center items-start h-full w-full md:p-16 p-5 ">
+            <div className="md:flex flex-col justify-between items-start md:w-2/4 ">
+              <div className="max-w-sm">
+                <h1 className="text-4xl font-normal text-gray-100 text-left mb-4 ">
+                  {title}
+                </h1>
+                <p className="text-normal text-gray-300 mb-5 ">{description}</p>
+              </div>
             </div>
             <div className="flex flex-wrap justify-start items-start mt-2">
-              <StackTag name={"Javascript"} bgColor={"bg-yellow-500/30"} />
-              <StackTag name={"React"} bgColor={"bg-blue-600/30"} />
-              <StackTag name={"Nextjs"} bgColor={"bg-gray-900/30"} />
-              <StackTag name={"MDX"} bgColor={"bg-teal-600/30"} />
+              <StackTag name={"Javascript"} bgColor={"bg-yellow-500"} />
+              <StackTag name={"React"} bgColor={"bg-blue-600"} />
+              <StackTag name={"Nextjs"} bgColor={"bg-gray-900"} />
+              <StackTag name={"MDX"} bgColor={"bg-teal-600"} />
             </div>
           </div>
         </div>

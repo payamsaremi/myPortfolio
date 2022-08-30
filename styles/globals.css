@@ -18,6 +18,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
+  height: 200px;
   background: #fafafa;
   -webkit-border-radius: 5px;
 }
@@ -36,7 +37,7 @@ html {
 }
 
 #__next {
-  @apply bg-zinc-50 dark:bg-gray-900;
+  @apply bg-zinc-50 dark:bg-black;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -210,5 +211,3 @@ table {
 .prose .callout > p {
   margin: 0 !important;
 }
-
-

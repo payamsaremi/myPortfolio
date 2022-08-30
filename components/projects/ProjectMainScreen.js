@@ -15,8 +15,8 @@ export default function ProjectMainScreen({
   };
 
   return (
-    <div className="flex flex-row-reverse items-end justify-between bg-zinc-900 w-full h-screen">
-      <div className="w-full h-screen md:w-3/4 ">
+    <div className="flex flex-row-reverse items-center justify-between bg-black w-full h-screen">
+      <div className="w-full md:w-2/4 h-screen bg-gray-800">
         <Image
           width={1200}
           height={1200}
@@ -26,7 +26,7 @@ export default function ProjectMainScreen({
           priority
         />
       </div>
-      <div className="hidden md:flex flex-col justify-between items-start md:w-1/4 p-5 mt-20 ">
+      <div className="hidden md:flex flex-col justify-between items-start md:w-2/4 p-16">
         <motion.div className="max-w-sm">
           <a className="cursor-pointer" href={liveSite}>
             <div className="flex justify-start items-center bg-gray-900 px-2 py-1 mb-1 w-44 rounded-md font-mono">
@@ -41,6 +41,7 @@ export default function ProjectMainScreen({
         </motion.div>
       </div>
       <div className="absolute bottom-0 w-full">
+        {/* Mobile screen */}
         <div className="flex p-6 justify-between items-center">
           <div>
             <motion.div className="md:w-96 md:hidden">

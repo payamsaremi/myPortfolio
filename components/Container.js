@@ -9,7 +9,7 @@ export default function Container({ children, ...customMeta }) {
   };
   console.log("meta", meta);
   return (
-    <div className="bg-gray-50 dark:bg-gray-900">
+    <div>
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -33,7 +33,7 @@ export default function Container({ children, ...customMeta }) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <main className="px-6 bg-gray-50 dark:bg-gray-900">
+      <main className="px-6 bg-gray-50 dark:bg-black">
         <Navbar />
 
         {children}

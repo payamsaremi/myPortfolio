@@ -14,7 +14,7 @@ export default function Projects() {
             <div className="flex flex-row max-w-xs justify-between items-end">
               <div className="flex max-w-md">
                 <p className="text-4xl font-light text-brand-800 dark:text-brand-400 leading-9">
-                  <span className="font-semibold ">
+                  <span className="font-thin ">
                     {" "}
                     <span className="text-brand-500 dark:text-brand-400">
                       Products

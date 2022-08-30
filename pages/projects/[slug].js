@@ -5,20 +5,22 @@ import ProjectMainScreen from "../../components/projects/ProjectMainScreen";
 import ProjectDetailScreen from "../../components/projects/ProjectDetailScreen";
 import { projectData } from "../../data/projects/data";
 export default function ProjectDetail({ project }) {
-  const { coverImage, title, description, liveSite, mainImage } = project;
+  const { coverImage, title, description, liveSite, mainImage, pages } =
+    project;
   const router = useRouter();
   const { slug } = router.query;
   return (
     <FadePageWrapper>
       <motion.div>
         <div
-          className="absolute top-0 left-0 m-6 text-xl font-mono cursor-pointer"
+          className="absolute top-0 left-0 m-6 text-xl cursor-pointer"
           onClick={() => router.push("/")}
         >
-          Payam Saremi
+          {/* paj.am */}
+          <img width={"75"} src="/images/pajam-logo-1.png"></img>
         </div>
         <div
-          className="absolute top-0 right-0 m-6 cursor-pointer pt-1 font-mono"
+          className="absolute top-0 right-0 m-6 cursor-pointer pt-1 "
           onClick={() => router.back()}
         >
           Back
@@ -35,13 +37,23 @@ export default function ProjectDetail({ project }) {
       </motion.div>
 
       {/* NEXT PAGE */}
+      {pages &&
+        pages.map((page) => {
+          if (!page) return;
+          return (
+            <ProjectDetailScreen
+              mainImage={page.mainImage}
+              title={page.title}
+              description={page.description}
+            />
+          );
+        })}
+
       {/* <ProjectDetailScreen
-        mainImage={"/images/projects/browser-portfolio.png"}
-        title={"Experiances, Discoveries and Creation"}
-        description={
-          "My personal website is my opportunity to share my experiances with others. To share technoical or personal soloutions, with the hope that it can be useful for somone. My personal website considt of Blogs, Projects and my personal Photography."
-        }
-      /> */}
+            title={page.title}
+            description={page.description}
+            mainImage={page.mainImage}
+          /> */}
     </FadePageWrapper>
   );
 }
