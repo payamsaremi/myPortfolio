@@ -42,6 +42,7 @@ export default function ProjectDetail({ project }) {
           if (!page) return;
           return (
             <ProjectDetailScreen
+              key={page.pageNumber}
               mainImage={page.mainImage}
               title={page.title}
               description={page.description}

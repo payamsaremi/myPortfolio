@@ -2,9 +2,9 @@ import Image from "next/future/image";
 import { motion } from "framer-motion";
 import StackTag from "../StackTag";
 import cn from "classnames";
+import TitleAnimation from "../TitleAnimation";
 
 export default function ProjectDetailScreen({ mainImage, title, description }) {
-  const bgColor = "white";
   return (
     <div
       className={cn(
@@ -17,7 +17,7 @@ export default function ProjectDetailScreen({ mainImage, title, description }) {
             width={1200}
             height={1200}
             alt={title}
-            className="object-cover w-full h-full bg-gray-900 md:rounded-md"
+            className="object-cover w-full h-full md:rounded-md"
             src={mainImage}
           />
         </div>
@@ -25,9 +25,11 @@ export default function ProjectDetailScreen({ mainImage, title, description }) {
           <div className="flex flex-col justify-center items-start h-full w-full md:p-16 p-5 ">
             <div className="md:flex flex-col justify-between items-start md:w-2/4 ">
               <div className="max-w-sm">
-                <h1 className="text-4xl font-normal text-gray-100 text-left mb-4 ">
-                  {title}
-                </h1>
+                <TitleAnimation
+                  title={title}
+                  className="text-4xl font-normal text-gray-100 text-left mb-4 "
+                />
+
                 <p className="text-normal text-gray-300 mb-5 ">{description}</p>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TitleAnimation from "../TitleAnimation";
 import TopArticles from "./TopArticles";
 export default function Articles({ posts }) {
   const topPosts = Object.values(posts)
@@ -10,9 +11,10 @@ export default function Articles({ posts }) {
   return (
     <>
       <div className="flex flex-col items-start justify-center max-w-3xl mx-auto mb-8">
-        <h1 className="mb-12 text-7xl font-bold tracking-tight text-black md:text-6xl dark:text-white">
-          Stories {"&"} Ideas
-        </h1>
+        <TitleAnimation
+          title="Stories & Ideas"
+          className="mb-12 text-7xl font-bold tracking-tight text-black md:text-6xl dark:text-white"
+        />
         <TopArticles topPosts={topPosts} />
 
         {posts.map((post) => {

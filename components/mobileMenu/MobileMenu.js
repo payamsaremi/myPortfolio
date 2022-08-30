@@ -56,7 +56,7 @@ export default function MobileMenu() {
             exit={"closed"}
             onClick={() => toggleOpen()}
             className={
-              "fixed inset-0 top-0 left-0 right-0 pt-10 w-full h-full overscroll-contain  dark:bg-gray-900/80 overflow-hidden backdrop-blur-md"
+              "fixed inset-0 top-0 left-0 z-50 right-0 pt-10 w-full h-full overscroll-contain  dark:bg-gray-900/80 overflow-hidden backdrop-blur-md"
             }
           >
             <motion.div

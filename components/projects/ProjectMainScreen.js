@@ -2,6 +2,7 @@ import Image from "next/future/image";
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
 import NextLink from "next/link";
+import TitleAnimation from "../TitleAnimation";
 export default function ProjectMainScreen({
   mainImage,
   title,
@@ -34,10 +35,13 @@ export default function ProjectMainScreen({
               <p>View live site</p>
             </div>
           </a>
-          <h1 className="text-4xl font-normal text-gray-100 text-left ">
-            {title}
-          </h1>
-          <p className="text-normal text-gray-300 mt-2 ">{description}</p>
+          <TitleAnimation
+            title={title}
+            className="text-5xl font-normal text-gray-100 text-left "
+          />
+          <p className="text-normal text-lg text-gray-200 mt-2 ">
+            {description}
+          </p>
         </motion.div>
       </div>
       <div className="absolute bottom-0 w-full">
@@ -45,9 +49,10 @@ export default function ProjectMainScreen({
         <div className="flex p-6 justify-between items-center">
           <div>
             <motion.div className="md:w-96 md:hidden">
-              <h1 className="text-4xl font-normal text-gray-100 text-left ">
-                {title}
-              </h1>
+              <TitleAnimation
+                title={title}
+                className="text-4xl font-normal text-gray-100 text-left "
+              />
               {/* <p className="text-normal text-gray-200 mt-2">{description}</p> */}
             </motion.div>
           </div>
