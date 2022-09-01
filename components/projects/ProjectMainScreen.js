@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
 import NextLink from "next/link";
 import TitleAnimation from "../TitleAnimation";
-import FadeInWrapper from "../fadeInWrapper";
 export default function ProjectMainScreen({
   mainImage,
   title,
