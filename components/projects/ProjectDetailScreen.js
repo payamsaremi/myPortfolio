@@ -1,18 +1,46 @@
 import Image from "next/future/image";
-import { motion } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
 import StackTag from "../StackTag";
 import cn from "classnames";
 import TitleAnimation from "../TitleAnimation";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 export default function ProjectDetailScreen({ mainImage, title, description }) {
+  const controls = useAnimationControls();
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) controls.start("visible");
+    if (!inView) controls.start("hidden");
+  }, [inView, controls]);
+
+  const variants = {
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+      },
+    },
+    hidden: { opacity: 0 },
+  };
   return (
     <div
       className={cn(
         "flex flex-col justify-center items-start w-full h-screen max-w-full bg-black "
       )}
     >
-      <div className="flex flex-col-reverse lg:flex-row justify-between items-start h-full w-full ">
-        <div className="h-1/2  w-full lg:h-full lg:w-2/4 ">
+      <motion.div className="flex flex-col-reverse lg:flex-row justify-between items-start h-full w-full ">
+        <motion.div
+          initial={"hidden"}
+          animate={controls}
+          variants={variants}
+          ref={ref}
+          className="h-1/2 w-full lg:h-full lg:w-2/4 "
+        >
           <Image
             width={1200}
             height={1200}
@@ -20,17 +48,17 @@ export default function ProjectDetailScreen({ mainImage, title, description }) {
             className="object-cover w-full h-full md:rounded-md"
             src={mainImage}
           />
-        </div>
+        </motion.div>
         <div className="flex lg:w-2/4 w-full h-1/2 lg:h-full justify-between items-center">
-          <div className="flex flex-col justify-center items-start h-full w-full md:p-16 p-5 ">
+          <div className="flex flex-col justify-center items-start h-full w-full mx-16 ">
             <div className="md:flex flex-col justify-between items-start md:w-2/4 ">
-              <div className="max-w-sm">
+              <div className="max-w-md">
                 <TitleAnimation
                   title={title}
-                  className="text-4xl font-normal text-gray-100 text-left mb-4 "
+                  className="text-5xl font-normal text-gray-100 text-left mb-4 "
                 />
 
-                <p className="text-normal text-gray-300 mb-5 ">{description}</p>
+                <p className="text-lg text-gray-200 mb-5 ">{description}</p>
               </div>
             </div>
             <div className="flex flex-wrap justify-start items-start mt-2">
@@ -41,7 +69,7 @@ export default function ProjectDetailScreen({ mainImage, title, description }) {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

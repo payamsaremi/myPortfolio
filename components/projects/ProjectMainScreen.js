@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
 import NextLink from "next/link";
 import TitleAnimation from "../TitleAnimation";
+import FadeInWrapper from "../fadeInWrapper";
 export default function ProjectMainScreen({
   mainImage,
   title,
@@ -27,8 +28,9 @@ export default function ProjectMainScreen({
           priority
         />
       </div>
+
       <div className="hidden md:flex flex-col justify-between items-start md:w-2/4 p-16">
-        <motion.div className="max-w-sm">
+        <div className="max-w-sm">
           <a className="cursor-pointer" href={liveSite}>
             <div className="flex justify-start items-center bg-gray-900 px-2 py-1 mb-1 w-44 rounded-md font-mono">
               <div className="bg-green-500 w-2 h-2 rounded-full mr-3"></div>
@@ -39,11 +41,13 @@ export default function ProjectMainScreen({
             title={title}
             className="text-5xl font-normal text-gray-100 text-left "
           />
+
           <p className="text-normal text-lg text-gray-200 mt-2 ">
             {description}
           </p>
-        </motion.div>
+        </div>
       </div>
+
       <div className="absolute bottom-0 w-full">
         {/* Mobile screen */}
         <div className="flex p-6 justify-between items-center">
@@ -53,7 +57,7 @@ export default function ProjectMainScreen({
                 title={title}
                 className="text-4xl font-normal text-gray-100 text-left "
               />
-              {/* <p className="text-normal text-gray-200 mt-2">{description}</p> */}
+              <p className="text-normal text-gray-200 mt-2">{description}</p>
             </motion.div>
           </div>
           <motion.div

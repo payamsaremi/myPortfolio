@@ -4,6 +4,22 @@ import { projectData } from "../../data/projects/data";
 import { motion } from "framer-motion";
 import TitleAnimation from "../../components/TitleAnimation";
 export default function Projects() {
+  const variants = {
+    closed: { opacity: 0 },
+    open: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    closed: { opacity: 0 },
+    open: { opacity: 1 },
+  };
+
   return (
     <>
       <Container
@@ -43,21 +59,25 @@ export default function Projects() {
               </div>
             </div>
           </div>
-          <div className="fex flex-row w-full">
-            <div>
-              {projectData.map((project) => {
-                return (
+          <motion.div
+            initial={"closed"}
+            animate={"open"}
+            variants={variants}
+            className="fex flex-row w-full"
+          >
+            {projectData.map((project) => {
+              return (
+                <motion.div variants={item} key={project.id}>
                   <ProjectCard
-                    key={project.id}
                     title={project.title}
                     slug={project.slug}
                     description={project.description}
                     coverImage={project.coverImage}
                   />
-                );
-              })}
-            </div>
-          </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </Container>
     </>

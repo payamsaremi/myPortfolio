@@ -1,9 +1,27 @@
 import Image from "next/future/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 export default function TopArticles({ topPosts }) {
   function truncate(str, max) {
     return str.length > max ? str.substr(0, max - 1) + "…" : str;
   }
+
+  const variants = {
+    closed: { opacity: 0 },
+    open: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerDirection: 1,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    closed: { opacity: 0 },
+    open: { opacity: 1 },
+  };
 
   return (
     <>
@@ -14,20 +32,26 @@ export default function TopArticles({ topPosts }) {
           coverImage={topPosts[0].meta.coverImage}
           slug={topPosts[0].meta.slug}
         />
-        <div className="flex flex-col">
+        <motion.div
+          initial={"closed"}
+          animate={"open"}
+          variants={variants}
+          className="flex flex-col"
+        >
           {topPosts.map((post, index) => {
             if (index < 1) return;
             return (
-              <SideFeaturedArticles
-                key={post.meta.slug}
-                title={post.meta.title}
-                excerpt={truncate(post.meta.excerpt, 60)}
-                coverImage={post.meta.coverImage}
-                slug={post.meta.slug}
-              />
+              <motion.div variants={item} key={post.meta.slug}>
+                <SideFeaturedArticles
+                  title={post.meta.title}
+                  excerpt={truncate(post.meta.excerpt, 60)}
+                  coverImage={post.meta.coverImage}
+                  slug={post.meta.slug}
+                />
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </>
   );

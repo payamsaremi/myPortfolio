@@ -1,6 +1,7 @@
 import Link from "next/link";
 import TitleAnimation from "../TitleAnimation";
 import TopArticles from "./TopArticles";
+import { motion } from "framer-motion";
 export default function Articles({ posts }) {
   const topPosts = Object.values(posts)
     .filter((post) => {
