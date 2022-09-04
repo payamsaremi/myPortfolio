@@ -17,7 +17,7 @@ export default function ProjectDetail({ project }) {
           onClick={() => router.push("/")}
         >
           {/* paj.am */}
-          <img width={"75"} src="/images/pajam-logo-1.png"></img>
+          {/* <Image width={"75"} href="/images/pajam-logo-1.png"></Image> */}
         </div>
         <div
           className="absolute top-0 right-0 m-6 cursor-pointer pt-1 "
@@ -49,12 +49,6 @@ export default function ProjectDetail({ project }) {
             />
           );
         })}
-
-      {/* <ProjectDetailScreen
-            title={page.title}
-            description={page.description}
-            mainImage={page.mainImage}
-          /> */}
     </FadePageWrapper>
   );
 }
