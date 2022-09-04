@@ -3,16 +3,16 @@ import { FiGithub, FiInstagram, FiTwitter } from "react-icons/fi";
 export default function Footer() {
   return (
     <>
-      <footer class="flex flex-col w-full md:flex-row justify-between items-center mx-auto border-t rounded-md max-w-5xl border-gray-800 py-8">
+      <footer className="flex flex-col w-full md:flex-row justify-between items-center mx-auto border-t rounded-md max-w-5xl border-gray-800 py-8">
         <div className="flex justify-center items-center text-gray-300 md:justify-start text-xl  w-full md:w-1/3">
           Payam Saremi
         </div>
-        <div class="flex flex-row justify-center items-start mx-auto w-full md:w-1/3 my-5 md:my-0">
+        <div className="flex flex-row justify-center items-start mx-auto w-full md:w-1/3 my-5 md:my-0">
           <LinkItem>home</LinkItem>
           <LinkItem>blog</LinkItem>
           <LinkItem>projects</LinkItem>
         </div>
-        <div class="flex flex-row justify-center md:justify-end items-last w-full md:w-1/3">
+        <div className="flex flex-row justify-center md:justify-end items-last w-full md:w-1/3">
           <a href="https://github.com/payamsaremi">
             <FiGithub
               size={"22"}
