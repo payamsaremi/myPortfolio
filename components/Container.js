@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "./navigation/Navbar";
+import Footer from "./Footer";
 export default function Container({ children, ...customMeta }) {
   const router = useRouter();
   const meta = {
@@ -33,12 +34,10 @@ export default function Container({ children, ...customMeta }) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <main className="px-6 bg-gray-50 dark:bg-black">
-        <Navbar />
 
-        {children}
-        {/* <Footer /> */}
-      </main>
+      <Navbar />
+      <main className="px-6 bg-gray-50 dark:bg-black">{children}</main>
+      <Footer />
     </div>
   );
 }

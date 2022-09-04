@@ -26,12 +26,12 @@ export default function Projects() {
         title={"Payam Saremi's Art, software and Design Projects"}
         description={"My recent Works, apps, Designs and Art"}
       >
-        <div className="flex flex-col items-start justify-center max-w-3xl mx-auto mb-8 ">
-          <div className="flex flex-col md:flex-row justify-between items-start mb-16 w-full ">
+        <div className="flex flex-col items-start justify-center max-w-5xl mx-auto mb-8 ">
+          <div className="flex flex-col md:flex-row justify-between items-start mb-12 w-full ">
             <div>
               <TitleAnimation
                 title="Projects"
-                className="text-7xl md:text-7xl font-bold mb-4"
+                className="text-7xl md:text-7xl font-thin mb-4"
               />
             </div>
             <div className="flex flex-row max-w-xs justify-between items-end ">
@@ -63,12 +63,13 @@ export default function Projects() {
             initial={"closed"}
             animate={"open"}
             variants={variants}
-            className="fex flex-row w-full"
+            className="flex flex-col w-full"
           >
-            {projectData.map((project) => {
+            {projectData.map((project, index) => {
               return (
                 <motion.div variants={item} key={project.id}>
                   <ProjectCard
+                    index={index}
                     title={project.title}
                     slug={project.slug}
                     description={project.description}

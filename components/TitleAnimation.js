@@ -31,7 +31,7 @@ export default function TitleAnimation(
       opacity: 1,
       y: `0em`,
       transition: {
-        duration: 0.7,
+        duration: 0.8,
         ease: "easeOut",
       },
     },

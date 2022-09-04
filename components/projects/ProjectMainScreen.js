@@ -15,6 +15,18 @@ export default function ProjectMainScreen({
     ease: "easeInOut",
   };
 
+  const variants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.8,
+      },
+    },
+  };
+
   return (
     <div className="flex flex-row-reverse items-center justify-between bg-black w-full h-screen">
       <div className="w-full md:w-2/4 h-screen bg-gray-800">
@@ -41,21 +53,33 @@ export default function ProjectMainScreen({
             className="text-5xl font-normal text-gray-100 text-left "
           />
 
-          <p className="text-normal text-lg text-gray-200 mt-2 ">
-            {description}
-          </p>
+          <motion.div
+            className="md:w-96"
+            initial={"hidden"}
+            animate={"visible"}
+            variants={variants}
+          >
+            <p className="text-normal text-lg text-gray-200 mt-2 ">
+              {description}
+            </p>
+          </motion.div>
         </div>
       </div>
 
       <div className="absolute bottom-0 w-full">
         {/* Mobile screen */}
-        <div className="flex p-6 justify-between items-center">
+        <div className="flex p-6 justify-between items-center ">
           <div>
-            <motion.div className="md:w-96 md:hidden">
-              <TitleAnimation
-                title={title}
-                className="text-4xl font-normal text-gray-100 text-left "
-              />
+            <TitleAnimation
+              title={title}
+              className="text-4xl font-normal text-gray-100 text-left md:hidden "
+            />
+            <motion.div
+              className="md:w-96 md:hidden"
+              initial={"hidden"}
+              animate={"visible"}
+              variants={variants}
+            >
               <p className="text-normal text-gray-200 mt-2">{description}</p>
             </motion.div>
           </div>

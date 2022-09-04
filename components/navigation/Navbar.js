@@ -6,7 +6,7 @@ import MobileMenu from "../mobileMenu/MobileMenu";
 import NavItem from "./NavItem";
 export default function Navbar() {
   return (
-    <nav className="flex flex-row items-center justify-between max-w-3xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-5 sm:pb-16  text-gray-900 bg-opacity-60 dark:text-gray-100">
+    <nav className="flex flex-row items-center justify-between max-w-5xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-5 sm:pb-16  text-gray-900 bg-opacity-60 dark:text-gray-100">
       <div className="md:hidden ">
         <MobileMenu />
       </div>
@@ -20,7 +20,7 @@ export default function Navbar() {
         <div>
           <FiGithub
             size={"20"}
-            className={"text-gray-500 hover:text-gray-300 cursor-pointer"}
+            className={"text-gray-500 hover:text-purple-500 cursor-pointer"}
           />
         </div>
       </NextLink>

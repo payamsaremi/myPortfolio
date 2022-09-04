@@ -5,7 +5,7 @@ export const projectData = [
     slug: "personal-portfolio",
     description:
       "Personal profile made using Nextjs, React, Javascript and Mdx",
-    coverImage: "/images/projects/portfolio/iphone-mock.jpg",
+    coverImage: "/images/projects/portfolio/portfolio-app-mock-2.png",
     mainImage: "/images/projects/portfolio/iphone-mock.jpg",
     liveSite: "https://portfolio.joinx.me",
     pages: [
@@ -24,7 +24,7 @@ export const projectData = [
     slug: "kip",
     description:
       "A productivity tool that help you keep your knowledge safe and accesable across all of your devices",
-    coverImage: "/images/projects/kip/kip-cover.png",
+    coverImage: "/images/projects/kip/kip-laptop-mock.png",
     mainImage: "/images/projects/kip/kip-app-long.png",
     liveSite: "https://kip.joinx.me",
     pages: [
@@ -43,16 +43,16 @@ export const projectData = [
     slug: "witme",
     description:
       "Personalised healthy plans that are designed to turn unhealthy behaviours into healthy habits that last a lifetime.",
-    coverImage: "/images/projects/witme-landing.png",
-    mainImage: "/images/projects/witme-app-new.png",
+    coverImage: "/images/projects/witme/witme-app-iphone.png",
+    mainImage: "/images/projects/witme/witme-app-iphone.png",
     liveSite: "https://joinwitme.netlify.app/",
     pages: [
       {
         pageNumber: "1",
-        title: "Keep things in place.",
+        title: "Personal Health Managment",
         description:
-          "Kip helps users to become more productive and focused with a simpler way to manage tabs, tasks and projets.",
-        mainImage: "/images/projects/kip/kip-cover.png",
+          "Witme helps to prevent diabeters and chronic desorders by laveraging AI and behaviur science via a friendly and familiar interface.",
+        mainImage: "/images/projects/witme/witme-landing-laptop.png",
       },
     ],
   },
