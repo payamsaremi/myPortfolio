@@ -24,7 +24,7 @@ export const projectData = [
     slug: "kip",
     description:
       "A productivity tool that help you keep your knowledge safe and accesable across all of your devices",
-    coverImage: "/images/projects/kip/kip-laptop-mock.png",
+    coverImage: "/images/projects/kip/kip-laptop-sofa.png",
     mainImage: "/images/projects/kip/kip-app-long.png",
     liveSite: "https://kip.joinx.me",
     pages: [
