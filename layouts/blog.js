@@ -29,7 +29,7 @@ export default function BlogLayout({ children, meta, readingTime }) {
           {meta.title}
         </h1>
 
-        <div className="w-full mt-4 prose lg:prose-lg dark:prose-dark max-w-none dark:text-zinc-400">
+        <div className="w-full mt-4 prose lg:prose-lg dark:prose-dark max-w-none dark:text-zinc-300">
           {children}
         </div>
       </article>

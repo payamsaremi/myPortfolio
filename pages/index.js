@@ -7,6 +7,7 @@ import { getAllPosts } from "../data/blog/api";
 
 import { useEffect, useState } from "react";
 import TitleAnimation from "../components/TitleAnimation";
+import ProjectList from "../components/projects/ProjectList";
 export default function Home({ posts }) {
   return (
     <Container
@@ -20,6 +21,7 @@ export default function Home({ posts }) {
             title="Payam Saremi"
           />
           <p className="text-gray-300 text-2xl"> Developer, Designer, Maker</p>
+          <ProjectList />
         </div>
       </div>
     </Container>
