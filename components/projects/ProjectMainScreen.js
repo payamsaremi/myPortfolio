@@ -83,7 +83,7 @@ export default function ProjectMainScreen({
               <p className="text-normal text-gray-200 mt-2">{description}</p>
             </motion.div>
           </div>
-          <motion.div
+          {/* <motion.div
             transition={{
               y: transitionValues,
             }}
@@ -102,7 +102,7 @@ export default function ProjectMainScreen({
             >
               <FiArrowDown size={"25"} className={"text-gray-200 mb-3"} />
             </motion.div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </div>

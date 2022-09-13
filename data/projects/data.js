@@ -1,5 +1,14 @@
 export const projectData = [
   {
+    id: "0",
+    title: "Meally",
+    slug: "meally",
+    description: "Healthy fresh food for students. ready in less than 8 min.",
+    coverImage: "/images/projects/meally/meally-macbook-mock.png",
+    mainImage: "/images/projects/meally/meally-macbook-mock.png",
+    liveSite: "https://meally.vercel.app/",
+  },
+  {
     id: "1",
     title: "Personal Portfolio",
     slug: "personal-portfolio",
@@ -8,34 +17,16 @@ export const projectData = [
     coverImage: "/images/projects/portfolio/portfolio-app-mock-2.png",
     mainImage: "/images/projects/portfolio/iphone-mock.jpg",
     liveSite: "https://portfolio.joinx.me",
-    pages: [
-      {
-        pageNumber: "1",
-        title: "Responsive Design",
-        description:
-          "Personal blog to share stories, Ideas and tutorials. Pax.am is personal website of Payam saremi that is building on Web2.0 technologies",
-        mainImage: "/images/projects/portfolio/portfolio-blog-mock-long.png",
-      },
-    ],
   },
   {
     id: "2",
     title: "Kip",
     slug: "kip",
     description:
-      "A productivity tool that help you keep your knowledge safe and accesable across all of your devices",
+      "A new browser that assist you in keeping your knowledge safe, accesable & orgonised across all of your devices",
     coverImage: "/images/projects/kip/kip-laptop-sofa.png",
     mainImage: "/images/projects/kip/kip-app-long.png",
     liveSite: "https://kip.joinx.me",
-    pages: [
-      {
-        pageNumber: "1",
-        title: "Keep things in place.",
-        description:
-          "Kip helps users to become more productive and focused with a simpler way to manage tabs, tasks and projets.",
-        mainImage: "/images/projects/kip/kip-cover.png",
-      },
-    ],
   },
   {
     id: "3",
@@ -46,14 +37,15 @@ export const projectData = [
     coverImage: "/images/projects/witme/witme-app-iphone.png",
     mainImage: "/images/projects/witme/witme-app-iphone.png",
     liveSite: "https://joinwitme.netlify.app/",
-    pages: [
-      {
-        pageNumber: "1",
-        title: "Personal Health Managment",
-        description:
-          "Witme helps to prevent diabeters and chronic desorders by laveraging AI and behaviur science via a friendly and familiar interface.",
-        mainImage: "/images/projects/witme/witme-landing-laptop.png",
-      },
-    ],
+  },
+  {
+    id: "4",
+    title: "Joinx",
+    slug: "Joinx",
+    description:
+      "Sell Digital Products, Create Memberships, Build your Community",
+    coverImage: "/images/projects/joinx/joinx-macbook-mock-zoomed.png",
+    mainImage: "/images/projects/joinx/joinx-macbook-mock.png",
+    liveSite: "https://joinx.me/",
   },
 ];

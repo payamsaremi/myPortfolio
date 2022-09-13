@@ -1,30 +1,26 @@
-import Head from "next/head";
-import Image from "next/image";
-import Articles from "../components/blog/Articles";
 import Container from "../components/Container";
-import TopArticles from "../components/blog/TopArticles";
 import { getAllPosts } from "../data/blog/api";
-
-import { useEffect, useState } from "react";
-import TitleAnimation from "../components/TitleAnimation";
-import ProjectList from "../components/projects/ProjectList";
+import BoxCard from "../components/BoxCard";
 export default function Home({ posts }) {
   return (
     <Container
       title={"Payam Saremi's Blog"}
       description={"My recent works, art and ideas"}
     >
-      <div className="flex flex-row">
-        <div className="flex flex-col items-start justify-center w-full max-w-5xl mx-auto mb-16">
-          <TitleAnimation
-            className="font-thin text-7xl mb-2 z-0"
-            title="Payam Saremi"
-          />
-          <p className="text-gray-300 text-2xl"> Developer, Designer, Maker</p>
-        </div>
-      </div>
-      <div className="flex flex-col items-start justify-center max-w-5xl mx-auto mb-8 ">
-        <ProjectList />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto mb-6">
+        <BoxCard
+          image={true}
+          title={"Hey! I'm Payam"}
+          description={"Web developer and designer."}
+          url={"/"}
+        />
+        <BoxCard title={"Blog"} description={"Stories & Ideas"} url={"/blog"} />
+        <BoxCard
+          title={"Projects"}
+          description={"Apps, products, art & design"}
+          url={"/projects"}
+        />
+        {/* <BoxCard title={"Résumé"} description={"Download my résumé"} /> */}
       </div>
     </Container>
   );

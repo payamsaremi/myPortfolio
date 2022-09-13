@@ -37,7 +37,7 @@ export default function ProjectDetail({ project }) {
       </motion.div>
 
       {/* NEXT PAGE */}
-      {pages &&
+      {/* {pages &&
         pages.map((page) => {
           if (!page) return;
           return (
@@ -48,7 +48,7 @@ export default function ProjectDetail({ project }) {
               description={page.description}
             />
           );
-        })}
+        })} */}
     </FadePageWrapper>
   );
 }

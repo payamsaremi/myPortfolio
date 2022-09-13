@@ -35,8 +35,10 @@ export default function Container({ children, ...customMeta }) {
         )}
       </Head>
 
-      <Navbar />
-      <main className="px-6 bg-gray-50 dark:bg-black">{children}</main>
+      <main className="px-6 bg-gray-50 dark:bg-black">
+        <Navbar />
+        {children}
+      </main>
       <Footer />
     </div>
   );
