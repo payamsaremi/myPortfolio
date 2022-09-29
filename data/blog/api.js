@@ -37,7 +37,6 @@ export const getPostBySlug = (slug) => {
 export const getAllPosts = () => {
   const posts = getSlugs()
     .map((slug) => getPostBySlug(slug))
-    .filter((post) => post.meta.isPublic !== false) //make sure it is a public post
     .sort((a, b) => {
       const t1 = new Date(a.meta.date).getTime();
       const t2 = new Date(b.meta.date).getTime();
