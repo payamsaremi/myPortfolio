@@ -1,26 +1,75 @@
 import Container from "../components/Container";
 import { getAllPosts } from "../data/blog/api";
 import BoxCard from "../components/BoxCard";
+import { motion, useAnimationControls } from "framer-motion";
 export default function Home({ posts }) {
+  const variants = {
+    closed: { opacity: 0 },
+    open: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerDirection: 1,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    closed: { opacity: 0 },
+    open: { opacity: 1 },
+  };
+
+  const links = [
+    {
+      id: "2",
+      image: "",
+      title: "Blog",
+      description: "Stories & Ideas",
+      url: "/blog",
+    },
+    {
+      id: "3",
+      image: "",
+      title: "Projects",
+      description: "Apps, products, art & design",
+      url: "/projects",
+    },
+  ];
+
   return (
     <Container
       title={"Payam Saremi's Blog"}
       description={"My recent works, art and ideas"}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto mb-6">
-        <BoxCard
-          image={true}
-          title={"Hey! I'm Payam"}
-          description={"Web developer and designer."}
-          url={"/"}
-        />
-        <BoxCard title={"Blog"} description={"Stories & Ideas"} url={"/blog"} />
-        <BoxCard
-          title={"Projects"}
-          description={"Apps, products, art & design"}
-          url={"/projects"}
-        />
-        {/* <BoxCard title={"Résumé"} description={"Download my résumé"} /> */}
+      <div className="max-w-4xl">
+        <div className=" mb-2">
+          <BoxCard
+            image={"/images/me-avatar.png"}
+            title={"Hey! I'm Payam"}
+            description={
+              "Creative writer, founder and programmer. I have been building amazing products that are now being used by millions of users daily. I code in Javascript and Python. I write blogs about technologies like Machine learning, Ui/Ux development and marketing. I believe in self-resiliant clean code and autonaous ventures. The future will be autonomous and decentralised. lets create the feature we want to live in."
+            }
+            url={"/"}
+          />
+        </div>
+        <motion.div
+          initial={"closed"}
+          animate={"open"}
+          variants={variants}
+          className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2"
+        >
+          {links.map((link) => (
+            <motion.div variants={item} key={link.id}>
+              <BoxCard
+                image={link.image}
+                title={link.title}
+                description={link.description}
+                url={link.url}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </Container>
   );

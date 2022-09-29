@@ -11,7 +11,7 @@ export default function Articles({ posts }) {
 
   return (
     <>
-      <div className="flex flex-col items-start justify-center max-w-5xl mx-auto mb-8 ">
+      <div className="flex flex-col items-start justify-center max-w-full mb-8 p-10">
         <TitleAnimation
           title="Stories & Ideas"
           className="mb-12 text-7xl font-bold tracking-tight text-black md:text-6xl dark:text-white"

@@ -8,9 +8,9 @@ export default function Footer() {
           Payam Saremi
         </div>
         <div className="flex flex-row justify-center items-start mx-auto w-full md:w-1/3 my-5 md:my-0">
-          <LinkItem>home</LinkItem>
-          <LinkItem>blog</LinkItem>
-          <LinkItem>projects</LinkItem>
+          <LinkItem>Home</LinkItem>
+          <LinkItem>Blog</LinkItem>
+          <LinkItem>Projects</LinkItem>
         </div>
         <div className="flex flex-row justify-center md:justify-end items-last w-full md:w-1/3">
           <a href="https://github.com/payamsaremi">

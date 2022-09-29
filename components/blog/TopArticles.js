@@ -53,7 +53,7 @@ export default function TopArticles({ topPosts }) {
 const SideFeaturedArticles = ({ title, coverImage, excerpt, slug }) => {
   return (
     <Link href={`blog/${slug}`} key={slug}>
-      <div className="flex flex-col justify-center items-center mb-4 cursor-pointer md:ml-4 w-full md:w-80">
+      <div className="flex flex-col justify-center items-center mb-4 cursor-pointer md:mr-4 w-full md:w-80">
         <div className="mb-2 w-full h-full">
           <Image
             width={800}

@@ -1,42 +1,45 @@
-import ProjectCard from "../../components/projects/ProjectCard";
 import { projectData } from "../../data/projects/data";
 import { motion } from "framer-motion";
-export default function ProjectList() {
+import ProjectCardSmall from "./ProjectCardSmall";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Link from "next/link";
+export default function ProjectList({ posts, setSelectedPostSlug }) {
   const variants = {
     closed: { opacity: 0 },
     open: {
       opacity: 1,
       transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.1,
+        delay: 0.2,
       },
     },
   };
 
-  const item = {
-    closed: { opacity: 0 },
-    open: { opacity: 1 },
-  };
   return (
     <motion.div
       initial={"closed"}
       animate={"open"}
       variants={variants}
-      className="flex flex-col w-full"
+      className="flex flex-col w-full max-w-full "
     >
-      {projectData.map((project, index) => {
-        return (
-          <motion.div variants={item} key={project.id}>
-            <ProjectCard
-              index={index}
-              title={project.title}
-              slug={project.slug}
-              description={project.description}
-              coverImage={project.coverImage}
-            />
-          </motion.div>
-        );
-      })}
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 3, 1222: 6 }}>
+        <Masonry>
+          {posts.map((project, index) => {
+            return (
+              <Link href={`/projects/${project.meta.slug}`} key={index}>
+                <div>
+                  <ProjectCardSmall
+                    index={index}
+                    title={project.meta.title}
+                    slug={project.meta.slug}
+                    description={project.meta.description}
+                    coverImage={project.meta.coverImage}
+                  />
+                </div>
+              </Link>
+            );
+          })}
+        </Masonry>
+      </ResponsiveMasonry>
     </motion.div>
   );
 }

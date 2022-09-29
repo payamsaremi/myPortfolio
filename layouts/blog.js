@@ -7,9 +7,10 @@ export default function BlogLayout({ children, meta, readingTime }) {
       title={`${meta.title} – Payam Saremi`}
       description={meta.excerpt}
       date={new Date(meta.date).toISOString()}
+      coverImage={meta.coverImage}
       type="article"
     >
-      <article className="flex flex-col items-start justify-center w-full max-w-3xl mx-auto mb-16">
+      <article className="flex flex-col items-start justify-center w-full max-w-3xl mx-auto mb-16 mt-12">
         <div className="flex justify-between items-baseline w-full">
           <div className="flex flex-row justify-start items-center ">
             <Avatar image={"/images/payam-avatar.jpg"} size={"35"} />

@@ -35,20 +35,6 @@ export default function ProjectDetail({ project }) {
           />
         </div>
       </motion.div>
-
-      {/* NEXT PAGE */}
-      {/* {pages &&
-        pages.map((page) => {
-          if (!page) return;
-          return (
-            <ProjectDetailScreen
-              key={page.pageNumber}
-              mainImage={page.mainImage}
-              title={page.title}
-              description={page.description}
-            />
-          );
-        })} */}
     </FadePageWrapper>
   );
 }

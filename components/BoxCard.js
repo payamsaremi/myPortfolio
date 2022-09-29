@@ -2,13 +2,14 @@ import Image from "next/future/image";
 import { FiArrowRight } from "react-icons/fi";
 import useHover from "../hooks/useHover";
 import NextLink from "next/link";
+import FadeInChild from "./FadeInChild";
 export default function BoxCard({ image, title, description, url = "/" }) {
   const [hoverRef, isHovered] = useHover();
   return (
     <NextLink href={url}>
       <div
         ref={hoverRef}
-        className="flex flex-col items-baseline justify-end border border-gray-800 rounded-md p-10 w-full min-h-[300px] cursor-pointer"
+        className="flex flex-col items-baseline justify-end border border-gray-800 hover:border-gray-700 p-10 w-full min-h-[100px] cursor-pointer"
       >
         {image && (
           <div className="bg-gray-800 w-24 h-24 rounded-full mb-5 ">
@@ -25,12 +26,7 @@ export default function BoxCard({ image, title, description, url = "/" }) {
             {title}
           </div>
           <div className="flex w-full items-end justify-between">
-            <p className="text-gray-300 text-xl w-[200px]">{description}</p>
-            {isHovered && (
-              <div className="bg-gray-800 p-1 rounded-full">
-                <FiArrowRight size={"20"} />
-              </div>
-            )}
+            <p className="text-gray-300 text-lg w-full">{description}</p>
           </div>
         </div>
       </div>
