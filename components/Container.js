@@ -59,8 +59,7 @@ export default function Container({ children, ...customMeta }) {
         <meta
           property="og:image"
           content={`https://payam.joinx.me/${meta.coverImage}`}
-        />{" "}
-        //TODO: Add Image seo
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@mesureme" />
         <meta name="twitter:title" content={meta.title} />
