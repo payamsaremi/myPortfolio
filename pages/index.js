@@ -42,7 +42,7 @@ export default function Home({ posts }) {
       title={"Payam Saremi's Blog"}
       description={"My recent works, art and ideas"}
     >
-      <div className="max-w-4xl">
+      <div className="max-w-full">
         <div className=" mb-2">
           <BoxCard
             image={"/images/me-avatar.png"}
@@ -57,7 +57,7 @@ export default function Home({ posts }) {
           initial={"closed"}
           animate={"open"}
           variants={variants}
-          className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2"
+          className="w-full grid grid-col-4 md:grid-cols-2 gap-2 mb-2"
         >
           {links.map((link) => (
             <motion.div variants={item} key={link.id}>

@@ -1,5 +1,6 @@
 import Container from "../components/Container";
 import ProjectHeader from "../components/projects/ProjectHeader";
+import ProjectList from "../components/projects/ProjectList";
 import SildeTitleMenu from "../components/projects/SideTitleMenu";
 export default function ProjectLayout({ children, meta }) {
   return (
@@ -18,7 +19,7 @@ export default function ProjectLayout({ children, meta }) {
           />
         </div>
         <div className="flex flex-col xl:flex-row">
-          <div className="w-2/3">
+          <div className="w-1/2">
             <SildeTitleMenu projectTitle={meta.title} />
           </div>
           <article className="w-full flex justify-center">

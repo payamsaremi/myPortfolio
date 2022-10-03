@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { getProjectBySlug, getSlugs } from "../../data/projects/api";
-import ProjectMainScreen from "../../components/projects/ProjectMainScreen";
+
 import { MDXRemote } from "next-mdx-remote";
 import { mdxToHtml } from "../../libs/mdx";
 import ProjectLayout from "../../layouts/project";
 import components from "../../components/MDXComponents";
+import ProjectList from "../../components/projects/ProjectList";
 export default function ProjectDetail({ project }) {
   const router = useRouter();
   return (
