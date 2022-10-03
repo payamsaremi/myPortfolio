@@ -1,54 +1,30 @@
-import Image from "next/future/image";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
+import { getProjectBySlug, getSlugs } from "../../data/projects/api";
 import ProjectMainScreen from "../../components/projects/ProjectMainScreen";
-import ProjectDetailScreen from "../../components/projects/ProjectDetailScreen";
-import { projectData } from "../../data/projects/data";
+import { MDXRemote } from "next-mdx-remote";
+import { mdxToHtml } from "../../libs/mdx";
+import ProjectLayout from "../../layouts/project";
+import components from "../../components/MDXComponents";
 export default function ProjectDetail({ project }) {
-  const { coverImage, title, description, liveSite, mainImage, pages } =
-    project;
   const router = useRouter();
-  const { slug } = router.query;
   return (
-    <FadePageWrapper>
-      <motion.div>
-        <div
-          className="absolute top-0 left-0 m-6 text-xl cursor-pointer"
-          onClick={() => router.push("/")}
-        >
-          {/* paj.am */}
-          {/* <Image width={"75"} href="/images/pajam-logo-1.png"></Image> */}
-        </div>
-        <div
-          className="absolute top-0 right-0 m-6 cursor-pointer pt-1 "
-          onClick={() => router.back()}
-        >
-          Back
-        </div>
-        <div>
-          <ProjectMainScreen
-            mainImage={mainImage}
-            coverImage={coverImage}
-            title={title}
-            description={description}
-            liveSite={liveSite}
-          />
-        </div>
-      </motion.div>
-    </FadePageWrapper>
-  );
-}
-
-export function FadePageWrapper({ children }) {
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      {children}
+    <motion.div>
+      <div
+        className="absolute top-0 right-0 m-6 cursor-pointer pt-1"
+        onClick={() => router.back()}
+      >
+        Back
+      </div>
+      <ProjectLayout meta={project.meta} readingTime={project.readingTime}>
+        <MDXRemote {...project.source} components={components} />
+      </ProjectLayout>
     </motion.div>
   );
 }
 
 export const getStaticPaths = async () => {
-  const paths = projectData.map(({ slug }) => ({ params: { slug } }));
+  const paths = getSlugs().map((slug) => ({ params: { slug } }));
   return {
     paths,
     fallback: false,
@@ -57,10 +33,11 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const { slug } = params;
-  console.log("slugslugslug", slug);
-  const project = projectData.filter((project) => {
-    if (project.slug === slug) return project;
-  })[0];
+  const { content, meta } = getProjectBySlug(slug);
 
-  return { props: { project: project } };
+  const { html, readingTime } = await mdxToHtml(content);
+
+  console.log("readingTime", readingTime);
+
+  return { props: { project: { source: html, meta, readingTime } } };
 };

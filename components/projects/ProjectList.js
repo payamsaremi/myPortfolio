@@ -1,9 +1,8 @@
-import { projectData } from "../../data/projects/data";
 import { motion } from "framer-motion";
 import ProjectCardSmall from "./ProjectCardSmall";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Link from "next/link";
-export default function ProjectList({ posts, setSelectedPostSlug }) {
+export default function ProjectList({ posts }) {
   const variants = {
     closed: { opacity: 0 },
     open: {
@@ -19,9 +18,9 @@ export default function ProjectList({ posts, setSelectedPostSlug }) {
       initial={"closed"}
       animate={"open"}
       variants={variants}
-      className="flex flex-col w-full max-w-full "
+      className="flex flex-col w-full max-w-full"
     >
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 3, 1222: 6 }}>
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 1222: 5 }}>
         <Masonry>
           {posts.map((project, index) => {
             return (

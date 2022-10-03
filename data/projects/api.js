@@ -3,10 +3,10 @@ import fs from "fs";
 import { sync } from "glob";
 import matter from "gray-matter";
 
-const POSTS_PATH = path.join(process.cwd(), "data/projects/published");
+const PROJECT_PATH = path.join(process.cwd(), "data/projects/published");
 
 export const getSlugs = () => {
-  const paths = sync(`${POSTS_PATH}/*.mdx`);
+  const paths = sync(`${PROJECT_PATH}/*.mdx`);
   return paths.map((path) => {
     const parts = path.split("/");
     const fileName = parts[parts.length - 1];
@@ -15,9 +15,9 @@ export const getSlugs = () => {
   });
 };
 
-export const getPostBySlug = (slug) => {
-  const postPath = path.join(POSTS_PATH, `${slug}.mdx`);
-  const source = fs.readFileSync(postPath);
+export const getProjectBySlug = (slug) => {
+  const projectPath = path.join(PROJECT_PATH, `${slug}.mdx`);
+  const source = fs.readFileSync(projectPath);
   const { content, data } = matter(source);
 
   return {
@@ -30,13 +30,14 @@ export const getPostBySlug = (slug) => {
       date: (data.date ?? new Date()).toString(),
       isPublic: data.isPublic ?? false,
       coverImage: data.coverImage ?? "",
+      mainImage: data.mainImage ?? "",
     },
   };
 };
 
-export const getAllPosts = () => {
-  const posts = getSlugs()
-    .map((slug) => getPostBySlug(slug))
+export const getAllProjects = () => {
+  const projects = getSlugs()
+    .map((slug) => getProjectBySlug(slug))
     .sort((a, b) => {
       const t1 = new Date(a.meta.date).getTime();
       const t2 = new Date(b.meta.date).getTime();
@@ -46,5 +47,5 @@ export const getAllPosts = () => {
       return 0;
     })
     .reverse();
-  return posts;
+  return projects;
 };

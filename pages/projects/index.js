@@ -2,7 +2,7 @@ import { useState } from "react";
 import Container from "../../components/Container";
 import ProjectDetail from "../../components/projects/ProjectDetail";
 import ProjectList from "../../components/projects/ProjectList";
-import { getAllPosts } from "../../data/projects/api";
+import { getAllProjects } from "../../data/projects/api";
 export default function Projects({ posts }) {
   return (
     <>
@@ -21,7 +21,7 @@ export default function Projects({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts().slice(0, 9);
+  const posts = getAllProjects().slice(0, 9);
 
   return {
     props: {
