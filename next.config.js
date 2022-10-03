@@ -1,3 +1,5 @@
+const { default: DailyMotionPlayer } = require("react-player/dailymotion");
+
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
@@ -27,6 +29,7 @@ const ContentSecurityPolicy = `
     connect-src *;
     font-src 'self';
 `;
+// this constant  all day.
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP

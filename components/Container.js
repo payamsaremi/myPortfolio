@@ -11,10 +11,10 @@ export default function Container({ children, ...customMeta }) {
 
   function addJsonLd() {
     return {
-      __html: ` {
+      __html: `{
         "@context": "https://schema.org",
         "@type": "NewsArticle",
-        "url": "${`https://payam.joinx.me/${router.asPath}`}"
+        "url": "${`https://payam.joinx.me/${router.asPath}`}",
         "headline": "${meta.title}",
         "name": "${meta.title}",
         "articleBody": "${meta.title}",
