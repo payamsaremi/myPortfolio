@@ -10,12 +10,6 @@ export default function ProjectDetail({ project }) {
   const router = useRouter();
   return (
     <motion.div>
-      <div
-        className="absolute top-0 right-0 m-6 cursor-pointer pt-1"
-        onClick={() => router.back()}
-      >
-        Back
-      </div>
       <ProjectLayout meta={project.meta} readingTime={project.readingTime}>
         <MDXRemote {...project.source} components={components} />
       </ProjectLayout>

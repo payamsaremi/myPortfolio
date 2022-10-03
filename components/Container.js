@@ -80,15 +80,9 @@ export default function Container({ children, ...customMeta }) {
           <Navbar />
         </div>
 
-        <div className="flex">
-          {/* <div className="flex w-36 h-full mr-5">
-            <p className="w-full text-7xl -rotate-90"></p>
-          </div> */}
-
-          <div className="w-screen mt-9 px-2 pt-3">{children}</div>
-        </div>
+        <div className="w-screen mt-9 px-2 pt-3">{children}</div>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

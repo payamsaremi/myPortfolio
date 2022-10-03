@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Container from "../../components/Container";
-import ProjectDetail from "../../components/projects/ProjectDetail";
 import ProjectList from "../../components/projects/ProjectList";
 import { getAllProjects } from "../../data/projects/api";
 export default function Projects({ posts }) {
@@ -11,7 +10,7 @@ export default function Projects({ posts }) {
         description={"My recent Works, apps, Designs and Art"}
       >
         <div className="flex flex-row items-start justify-center mx-auto ">
-          <div className="w-full max-w-full h-full ">
+          <div className="w-full max-w-full h-full">
             <ProjectList posts={posts} />
           </div>
         </div>
@@ -21,7 +20,7 @@ export default function Projects({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = getAllProjects().slice(0, 9);
+  const posts = getAllProjects();
 
   return {
     props: {
