@@ -1,19 +1,37 @@
+import cn from "classnames";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
 import TitleAnimation from "../TitleAnimation";
-export default function SildeTitleMenu({ projectTitle }) {
+export default function SildeTitleMenu({ meta, projects }) {
+  const router = useRouter();
+
   return (
     <>
       <div className={"p-5"}>
-        <TitleAnimation
-          title={projectTitle}
-          className="text-6xl xl:text-8xl mb-2 xl:leading-[80px] xl:mb-5 text-gray-800 dark:text-white font-semibold"
-        />
+        <div className="text-6xl xl:text-7xl mb-2 xl:leading-[80px] xl:mb-5 text-gray-800 dark:text-white font-semibold max-w-full">
+          {meta.title}
+        </div>
         <p className="text-2xl xl:text-2xl mb-2 text-gray-800 dark:text-gray-300">
           Product Engineer
         </p>
         <ul>
-          <li className="cursor-pointer text-gray-300">witme</li>
-          <li className="cursor-pointer text-gray-200">joinx</li>
-          <li className="cursor-pointer text-gray-300">Personal Portfolio</li>
+          {projects.map((project) => {
+            const isActive = meta.slug === project.meta.slug;
+            return (
+              <li
+                onClick={() => {
+                  router.push(project.meta.slug);
+                }}
+                className={cn(
+                  "cursor-pointer",
+                  isActive ? " text-gray-200 " : "text-gray-300"
+                )}
+              >
+                {project.meta.title}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>

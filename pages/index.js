@@ -48,7 +48,7 @@ export default function Home({ posts }) {
             image={"/images/me-avatar.png"}
             title={"Hey! I'm Payam"}
             description={
-              "Creative writer, founder and programmer. I have been building amazing products that are now being used by millions of users daily. I code in Javascript and Python. I write blogs about technologies like Machine learning, Ui/Ux development and marketing. I believe in self-resiliant clean code and autonaous ventures. The future will be autonomous and decentralised. lets create the feature we want to live in."
+              "Creative writer, founder and programmer. I have been building products that have been used by millions of users. I code in Javascript, Python & solidity. I write blogs about technologies like Blockchain,Ai & web development. The future will be autonomous and decentralised. let's create the feature we want to live in."
             }
             url={"/"}
           />

@@ -7,7 +7,6 @@ import NavItem from "./NavItem";
 export default function Navbar() {
   return (
     <nav className="flex flex-row items-center w-full justify-between max-w-full bg-black/90 border-b border-gray-200 dark:border-gray-700 mx-auto px-3 text-gray-900 dark:text-gray-100">
-      {/* <div className="bg-gray-900/50 blur-md"></div> */}
       <div className="md:hidden">
         <MobileMenu />
       </div>
