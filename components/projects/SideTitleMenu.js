@@ -20,6 +20,7 @@ export default function SildeTitleMenu({ meta, projects }) {
             const isActive = meta.slug === project.meta.slug;
             return (
               <li
+                key={project.meta.slug}
                 onClick={() => {
                   router.push(project.meta.slug);
                 }}
