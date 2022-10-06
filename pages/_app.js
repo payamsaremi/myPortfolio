@@ -1,7 +1,8 @@
 import "../styles/globals.css";
 import Script from "next/script";
+import { AnimatePresence } from "framer-motion";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <Script
@@ -18,7 +19,13 @@ function MyApp({ Component, pageProps }) {
 	  });
 	`}
       </Script>
-      <Component {...pageProps} />
+      <AnimatePresence
+        exitBeforeEnter
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
     </>
   );
 }

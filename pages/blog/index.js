@@ -8,9 +8,7 @@ export default function Blog({ posts }) {
         title={"Payam Saremi's Blog"}
         description={"My recent works, art and ideas"}
       >
-        <div>
-          <Articles posts={posts} />
-        </div>
+        <Articles posts={posts} />
       </Container>
     </>
   );

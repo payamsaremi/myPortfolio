@@ -23,7 +23,3 @@ export default function ProjectHeader({ title, mainImage }) {
     </a>
   );
 }
-
-//TODO: to buy and sell microstartups, bootstraps, projects.
-//Put your project up for sell.
-//TODO: Buy and sell web3 projects with crypto.

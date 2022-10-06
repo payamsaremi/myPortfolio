@@ -2,7 +2,14 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "./navigation/Navbar";
 import Footer from "./Footer";
+import { motion } from "framer-motion";
 export default function Container({ children, ...customMeta }) {
+  const variants = {
+    hidden: { opacity: 0 },
+    enter: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
   const router = useRouter();
   const meta = {
     ...customMeta,
@@ -64,7 +71,10 @@ export default function Container({ children, ...customMeta }) {
         <meta name="twitter:site" content="@mesureme" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        {/* <meta name="twitter:image" content={meta.image} /> */}
+        <meta
+          name="twitter:image"
+          content={`https://payam.joinx.me/${meta.coverImage}`}
+        />
         {meta.date && (
           <meta property="article:published_time" content={meta.date} />
         )}
@@ -75,14 +85,20 @@ export default function Container({ children, ...customMeta }) {
         />
       </Head>
 
-      <main className="bg-gray-50 dark:bg-black">
-        <div className="fixed w-full top-0">
-          <Navbar />
-        </div>
-
-        <div className="mt-9 px-2 pt-3">{children}</div>
+      <main className="flex flex-col min-h-screen justify-between ">
+        <Navbar />
+        <motion.div
+          variants={variants} // Pass the variant object into Framer Motion
+          initial="hidden" // Set the initial state to variants.hidden
+          animate="enter" // Animated state to variants.enter
+          exit="exit" // Exit state (used later) to variants.exit
+          transition={{ type: "linear" }} // Set the transition to linear
+          className={"pb-[500px]"}
+        >
+          {children}
+        </motion.div>
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

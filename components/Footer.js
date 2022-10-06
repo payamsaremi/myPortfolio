@@ -8,9 +8,9 @@ export default function Footer() {
           Payam Saremi
         </div>
         <div className="flex flex-row justify-center items-start mx-auto w-full md:w-1/3 my-5 md:my-0">
-          <LinkItem>Home</LinkItem>
-          <LinkItem>Blog</LinkItem>
-          <LinkItem>Projects</LinkItem>
+          <LinkItem link={"/"}>home</LinkItem>
+          <LinkItem link={"/blog"}>blog</LinkItem>
+          <LinkItem link={"/projects"}>projects</LinkItem>
         </div>
         <div className="flex flex-row justify-center md:justify-end items-last w-full md:w-1/3">
           <a href="https://github.com/payamsaremi">
@@ -27,10 +27,10 @@ export default function Footer() {
   );
 }
 
-function LinkItem({ children }) {
+function LinkItem({ children, link }) {
   return (
     <>
-      <Link href={"/" + children}>
+      <Link href={link}>
         <a>
           <div className="text-md w-fit text-gray-500 hover:text-gray-700 cursor-pointer transition-all p-2 mx-2">
             {children}

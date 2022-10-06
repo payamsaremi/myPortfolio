@@ -3,24 +3,9 @@ import ProjectCardSmall from "./ProjectCardSmall";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Link from "next/link";
 export default function ProjectList({ posts }) {
-  const variants = {
-    closed: { opacity: 0 },
-    open: {
-      opacity: 1,
-      transition: {
-        delay: 0.2,
-      },
-    },
-  };
-
   return (
-    <motion.div
-      initial={"closed"}
-      animate={"open"}
-      variants={variants}
-      className="flex flex-col w-full max-w-full"
-    >
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 1222: 5 }}>
+    <motion.div className="flex flex-col w-full max-w-full">
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 1222: 4 }}>
         <Masonry>
           {posts.map((project, index) => {
             return (

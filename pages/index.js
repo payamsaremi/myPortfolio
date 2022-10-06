@@ -42,8 +42,8 @@ export default function Home({ posts }) {
       title={"Payam Saremi's Blog"}
       description={"My recent works, art and ideas"}
     >
-      <div className="max-w-full">
-        <div className=" mb-2">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-2">
           <BoxCard
             image={"/images/me-avatar.png"}
             title={"Hey! I'm Payam"}

@@ -21,6 +21,7 @@ export default function FadeInChild({ children, delay = 0.1 }) {
       },
     },
     hidden: { opacity: 0 },
+    exit: { opacity: 0 },
   };
 
   return (
@@ -29,6 +30,7 @@ export default function FadeInChild({ children, delay = 0.1 }) {
       initial={"hidden"}
       animate={controls}
       variants={variants}
+      exit="exit"
     >
       {children}
     </motion.div>

@@ -2,7 +2,6 @@ import Image from "next/future/image";
 import { FiArrowRight } from "react-icons/fi";
 import useHover from "../hooks/useHover";
 import NextLink from "next/link";
-import FadeInChild from "./FadeInChild";
 export default function BoxCard({ image, title, description, url = "/" }) {
   const [hoverRef, isHovered] = useHover();
   return (

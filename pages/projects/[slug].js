@@ -14,15 +14,13 @@ import ProjectList from "../../components/projects/ProjectList";
 export default function ProjectDetail({ project, projects }) {
   const router = useRouter();
   return (
-    <motion.div>
-      <ProjectLayout
-        meta={project.meta}
-        readingTime={project.readingTime}
-        projects={projects}
-      >
-        <MDXRemote {...project.source} components={components} />
-      </ProjectLayout>
-    </motion.div>
+    <ProjectLayout
+      meta={project.meta}
+      readingTime={project.readingTime}
+      projects={projects}
+    >
+      <MDXRemote {...project.source} components={components} />
+    </ProjectLayout>
   );
 }
 
