@@ -75,12 +75,12 @@ export default function Container({ children, ...customMeta }) {
         />
       </Head>
 
-      <main className="bg-gray-50 dark:bg-black ">
+      <main className="bg-gray-50 dark:bg-black">
         <div className="fixed w-full top-0">
           <Navbar />
         </div>
 
-        <div className="w-screen mt-9 px-2 pt-3">{children}</div>
+        <div className="mt-9 px-2 pt-3">{children}</div>
       </main>
       <Footer />
     </div>

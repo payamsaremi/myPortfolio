@@ -10,25 +10,28 @@ export default function ProjectLayout({ children, meta, projects }) {
       type="project"
     >
       <div className="flex flex-col lg:flex-row h-full w-full ">
-        <div className="hidden lg:block lg:w-1/3">
+        <div className="hidden lg:block lg:w-1/5">
           <div className="fixed">
             <SildeTitleMenu meta={meta} projects={projects} />
           </div>
         </div>
 
-        <div className="flex flex-col lg:w-full pt-7">
-          <ProjectHeader
-            title={meta.title}
-            description={meta.description}
-            mainImage={meta.mainImage}
-          />
-
-          <div className="flex flex-col ">
+        <div className="flex flex-col lg:w-full p-7">
+          <div className="flex flex-row justify-between">
             <article>
-              <div className="w-full prose text-justify lg:prose-lg font-normal dark:prose-dark max-w-3xl dark:text-zinc-300 pb-10">
+              <h1 className="text-8xl mb-4">{meta.title}</h1>
+              <p className="text-4xl text-zinc-100">{meta.description}</p>
+              <div className="w-full prose text-justify lg:prose-lg font-normal max-w-full dark:prose-dark dark:text-zinc-300 ">
                 {children}
               </div>
             </article>
+            <div className={"p-7"}>
+              <ProjectHeader
+                title={meta.title}
+                description={meta.description}
+                mainImage={meta.mainImage}
+              />
+            </div>
           </div>
         </div>
       </div>

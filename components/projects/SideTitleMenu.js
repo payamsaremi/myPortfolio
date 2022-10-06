@@ -9,12 +9,10 @@ export default function SildeTitleMenu({ meta, projects }) {
   return (
     <>
       <div className={"p-5"}>
-        <div className="text-6xl xl:text-7xl mb-2 xl:leading-[80px] xl:mb-5 text-gray-800 dark:text-white font-semibold max-w-full">
-          {meta.title}
-        </div>
-        <p className="text-2xl xl:text-2xl mb-2 text-gray-800 dark:text-gray-300">
-          Product Engineer
-        </p>
+        <TitleAnimation
+          title={"Payam Saremi"}
+          className="text-6xl xl:text-7xl mb-2 xl:leading-[65px] xl:mb-5 text-gray-800 dark:text-gray-700 font-normal max-w-sm"
+        ></TitleAnimation>
         <ul>
           {projects.map((project) => {
             const isActive = meta.slug === project.meta.slug;
@@ -22,7 +20,7 @@ export default function SildeTitleMenu({ meta, projects }) {
               <li
                 key={project.meta.slug}
                 onClick={() => {
-                  router.push(project.meta.slug);
+                  router.replace(project.meta.slug);
                 }}
                 className={cn(
                   "cursor-pointer",

@@ -6,23 +6,19 @@ export default function ProjectHeader({ title, mainImage }) {
   if (!mainImage) mainImage = "/images/placeholder.jpeg";
   return (
     <a>
-      <div>
-        <div>
-          <FadeInChild delay={0.3}>
-            <div className="flex">
-              <Image
-                width={800}
-                height={800}
-                alt={title}
-                className={
-                  "rounded-md object-cover h-[440px] w-[770px] mr-1 bg-gray-900"
-                }
-                src={mainImage}
-                priority
-              />
-            </div>
-          </FadeInChild>
-        </div>
+      <div className="flex">
+        <FadeInChild delay={0.3}>
+          <div className="flex h-[550px] w-[550px] mb-2">
+            <Image
+              width={800}
+              height={800}
+              alt={title}
+              className={"rounded-md object-cover mr-1 bg-gray-900"}
+              src={mainImage}
+              priority
+            />
+          </div>
+        </FadeInChild>
       </div>
     </a>
   );
