@@ -42,13 +42,13 @@ export default function Home({ posts }) {
       title={"Payam Saremi's Blog"}
       description={"My recent works, art and ideas"}
     >
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-3xl">
         <div className="mb-2">
           <BoxCard
             image={"/images/me-avatar.png"}
             title={"Hey! I'm Payam"}
             description={
-              "Creative writer, founder and programmer. I have been building products that have been used by millions of users. I code in Javascript, Python & solidity. I write blogs about technologies like Blockchain,Ai & web development. The future will be autonomous and decentralised. let's create the feature we want to live in."
+              "Writer, founder and programmer. I have been building products that have been used by millions of users. I code in Javascript, Python & solidity. I write blogs about technologies like Blockchain,Ai & web development. The future will be autonomous and decentralised. let's create the feature we want to live in."
             }
             url={"/"}
           />

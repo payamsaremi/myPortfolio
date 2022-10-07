@@ -10,7 +10,7 @@ export default function Projects({ posts }) {
         description={"My recent Works, apps, Designs and Art"}
       >
         <div className="flex flex-row items-start justify-center mx-auto ">
-          <div className="w-full max-w-5xl h-full">
+          <div className="w-full max-w-3xl h-full">
             <ProjectList posts={posts} />
           </div>
         </div>

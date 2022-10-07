@@ -10,10 +10,12 @@ export default function Navbar() {
       <div className="md:hidden">
         <MobileMenu />
       </div>
-      <div className="hidden md:flex w-full justify-between items-center mx-auto  max-w-5xl">
-        <div className="flex justify-center items-center text-gray-300 md:justify-start text-xl w-full md:w-1/3">
-          Payam Saremi
-        </div>
+      <div className="hidden md:flex w-full justify-between items-center mx-auto  max-w-3xl">
+        <NextLink href={"/"}>
+          <div className="flex justify-center items-center text-gray-400 md:justify-start text-xl w-full md:w-1/3 cursor-pointer">
+            Payam Saremi
+          </div>
+        </NextLink>
         <div className="flex flex-row justify-center items-start mx-auto w-full md:w-1/3 my-5 md:my-0">
           <NavItem href="/" text="Home" />
           <NavItem href="/blog" text="Blog" />

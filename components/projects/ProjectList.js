@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function ProjectList({ posts }) {
   return (
     <motion.div className="flex flex-col w-full max-w-full">
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 1222: 4 }}>
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 1222: 3 }}>
         <Masonry>
           {posts.map((project, index) => {
             return (

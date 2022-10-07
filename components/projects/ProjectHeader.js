@@ -8,7 +8,7 @@ export default function ProjectHeader({ title, mainImage }) {
     <a>
       <div className="flex">
         <FadeInChild delay={0.3}>
-          <div className="flex h-[550px] w-[550px] mb-2">
+          <div className="flex h-[550px] w-full mb-2">
             <Image
               width={800}
               height={800}

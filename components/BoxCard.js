@@ -1,5 +1,4 @@
 import Image from "next/future/image";
-import { FiArrowRight } from "react-icons/fi";
 import useHover from "../hooks/useHover";
 import NextLink from "next/link";
 export default function BoxCard({ image, title, description, url = "/" }) {
@@ -8,7 +7,7 @@ export default function BoxCard({ image, title, description, url = "/" }) {
     <NextLink href={url}>
       <div
         ref={hoverRef}
-        className="flex flex-col items-baseline justify-end border border-gray-800 hover:border-gray-700 p-10 w-full min-h-[100px] cursor-pointer"
+        className="flex flex-col items-baseline justify-end border border-gray-200 dark:border-gray-900 dark:hover:border-gray-700 hover:border-gray-700 p-8 w-full min-h-[100px] cursor-pointer"
       >
         {image && (
           <div className="bg-gray-800 w-24 h-24 rounded-full mb-5 ">

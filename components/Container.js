@@ -85,7 +85,7 @@ export default function Container({ children, ...customMeta }) {
         />
       </Head>
 
-      <main className="flex flex-col min-h-screen justify-between ">
+      <main className="flex flex-col min-h-screen justify-between p-2 ">
         <Navbar />
         <motion.div
           variants={variants} // Pass the variant object into Framer Motion

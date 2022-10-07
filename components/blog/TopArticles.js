@@ -29,9 +29,9 @@ export default function TopArticles({ topPosts }) {
         initial={"closed"}
         animate={"open"}
         variants={variants}
-        className="flex flex-col md:flex-row w-full "
+        className="flex flex-col md:flex-row w-full"
       >
-        <div className="relative flex flex-col md:flex-row w-full ">
+        <div className="relative flex flex-col md:flex-row w-full">
           {topPosts.map((post, index) => {
             return (
               <motion.div variants={item} key={post.meta.slug}>
@@ -65,7 +65,7 @@ const SideFeaturedArticles = ({ title, coverImage, excerpt, slug }) => {
         </div>
         <div className="flex flex-col w-full">
           <a>
-            <h1 className="font-bold text-2xl mb-1">{title}</h1>
+            <p className="font-bold text-2xl mb-1">{title}</p>
           </a>
           <p className="text-md text-gray-300 text-sm ">{excerpt}</p>
         </div>
