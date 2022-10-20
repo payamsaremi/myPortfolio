@@ -1,19 +1,23 @@
-import { useState } from "react";
+import { Children, useState } from "react";
 import Container from "../../components/Container";
 import ProjectList from "../../components/projects/ProjectList";
 import { getAllProjects } from "../../data/projects/api";
+import PageVisualHeading from "../../components/PageVisualHeading";
+import PageAlignment from "../../components/PageAlignment";
 export default function Projects({ posts }) {
   return (
     <>
       <Container
-        title={"Payam Saremi's Art, software and Design Projects"}
+        title={"Payam Saremi's Art, Software and Design Projects"}
         description={"My recent Works, apps, Designs and Art"}
       >
-        <div className="flex flex-row items-start justify-center mx-auto ">
-          <div className="w-full max-w-3xl h-full">
-            <ProjectList posts={posts} />
-          </div>
-        </div>
+        <PageAlignment>
+          <PageVisualHeading
+            title={"Latest Projects"}
+            description={"Payam's Art, Software and Design Projects"}
+          />
+          <ProjectList posts={posts} />
+        </PageAlignment>
       </Container>
     </>
   );

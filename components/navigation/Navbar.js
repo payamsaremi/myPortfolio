@@ -6,7 +6,7 @@ import MobileMenu from "../mobileMenu/MobileMenu";
 import NavItem from "./NavItem";
 export default function Navbar() {
   return (
-    <nav className="flex flex-col py-8 ">
+    <nav className="flex flex-col">
       <div className="md:hidden">
         <MobileMenu />
       </div>

@@ -11,10 +11,8 @@ export default function ProjectCardSmall({ title, coverImage, description }) {
             className={"rounded-md"}
           />
         </div>
-        {/* <div className="text-3xl mb-1 mt-4 font-semibold">{title}</div> */}
-        <p className="font-bold text-2xl mb-1">{title}</p>
-        <p className="text-md text-gray-300 text-sm ">{description}</p>
-        {/* <p className="text-gray-600 dark:text-gray-300">{description}</p> */}
+        <h2 className="font-bold text-4xl mb-1">{title}</h2>
+        <p className="text-md text-gray-300 ">{description}</p>
       </div>
     </div>
   );

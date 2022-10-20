@@ -2,17 +2,11 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document(props) {
   return (
-    <Html lang="en" className="dark">
+    <Html lang="en" className="light">
       <Head>
-        {/* <link
-          rel="preload"
-          href="/fonts/ibm-plex-sans-var.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        /> */}
         <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
         <link href="/static/favicons/site.webmanifest" rel="manifest" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <meta
           name="theme-color"
           content="#f9fafb"
@@ -23,8 +17,8 @@ export default function Document(props) {
           content="#111111"
           media="(prefers-color-scheme: dark)"
         />
-        {/* <meta content="#ffffff" name="theme-color" /> */}
         <meta content="#ffffff" name="msapplication-TileColor" />
+        {/* <meta content="#ffffff" name="theme-color" /> */}
         {/* <link
           href="/static/favicons/apple-touch-icon.png"
           rel="apple-touch-icon"

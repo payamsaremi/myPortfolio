@@ -37,7 +37,7 @@ export default function TopArticles({ topPosts }) {
               <motion.div variants={item} key={post.meta.slug}>
                 <SideFeaturedArticles
                   title={post.meta.title}
-                  excerpt={truncate(post.meta.excerpt, 120)}
+                  excerpt={truncate(post.meta.excerpt, 80)}
                   coverImage={post.meta.coverImage}
                   slug={post.meta.slug}
                 />
@@ -65,9 +65,9 @@ const SideFeaturedArticles = ({ title, coverImage, excerpt, slug }) => {
         </div>
         <div className="flex flex-col w-full">
           <a>
-            <p className="font-bold text-2xl mb-1">{title}</p>
+            <p className="font-bold text-2xl mb-1 font-Custom">{title}</p>
           </a>
-          <p className="text-md text-gray-300 text-sm ">{excerpt}</p>
+          <p className="text-md text-gray-300  font-custom2">{excerpt}</p>
         </div>
       </div>
     </Link>

@@ -20,7 +20,9 @@ export default function ProjectLayout({ children, meta, projects }) {
           <div className="flex flex-row justify-between">
             <article>
               <h1 className="text-8xl mb-4">{meta.title}</h1>
-              <p className="text-4xl text-zinc-100">{meta.description}</p>
+              <p className="text-4xl text-gray-600 dark:text-gray-100">
+                {meta.description}
+              </p>
               <div className="my-8">
                 <ProjectHeader
                   title={meta.title}
@@ -28,7 +30,7 @@ export default function ProjectLayout({ children, meta, projects }) {
                   mainImage={meta.mainImage}
                 />
               </div>
-              <div className="w-full prose text-justify lg:prose-lg font-normal max-w-3xl dark:prose-dark dark:text-zinc-300 ">
+              <div className="w-full mt-4 prose lg:prose-xl dark:prose-dark max-w-none dark:text-gray-300">
                 {children}
               </div>
             </article>

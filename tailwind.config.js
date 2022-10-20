@@ -9,11 +9,16 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Lato", "sans-serif"],
+        Custom: ["Custom", "sans-serif"],
+        custom2: ["Lato", "sans-serif"],
+      },
       boxShadow: {
         "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
       },
       colors: {
-        "blue-opaque": "rgb(13 42 148 / 18%)",
+        customBlue: "#47a3b8",
         brand: {
           50: "#EDF3EF",
           100: "#D7E5DD",
@@ -39,75 +44,77 @@ module.exports = {
           900: "#111111",
         },
       },
-      fontFamily: {
-        sans: ["Edu VIC WA NT Beginner", ...fontFamily.sans],
-      },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            color: theme("colors.gray.700"),
-            a: {
-              color: theme("colors.purple.500"),
-              "&:hover": {
-                color: theme("colors.purple.700"),
-              },
-              code: { color: theme("colors.purple.400") },
-            },
-            "h1,h2,h3,h4": {
-              "scroll-margin-top": spacing[32],
-            },
-            thead: {
-              borderBottomColor: theme("colors.gray.200"),
-            },
-            code: { color: theme("colors.pink.500") },
-            "blockquote p:first-of-type::before": false,
-            "blockquote p:last-of-type::after": false,
-          },
-        },
-        dark: {
-          css: {
-            color: theme("colors.gray.200"),
-            a: {
-              color: theme("colors.purple.400"),
-              "&:hover": {
-                color: theme("colors.purple.600"),
-              },
-              code: { color: theme("colors.purple.400") },
-            },
-            blockquote: {
-              borderLeftColor: theme("colors.gray.700"),
-              color: theme("colors.gray.300"),
-            },
-            "h1,h2,h3,h4": {
-              color: theme("colors.gray.100"),
-              "scroll-margin-top": spacing[32],
-            },
-            hr: { borderColor: theme("colors.gray.700") },
-            ol: {
-              li: {
-                "&:before": { color: theme("colors.gray.500") },
-              },
-            },
-            ul: {
-              li: {
-                "&:before": { backgroundColor: theme("colors.gray.500") },
-              },
-            },
-            strong: { color: theme("colors.gray.100") },
-            thead: {
-              th: {
-                color: theme("colors.gray.100"),
-              },
-              borderBottomColor: theme("colors.gray.600"),
-            },
-            tbody: {
-              tr: {
-                borderBottomColor: theme("colors.gray.700"),
-              },
-            },
-          },
-        },
-      }),
+
+      // typography: (theme) => ({
+      //   DEFAULT: {
+      //     css: {
+      //       color: theme("colors.gray.700"),
+      //       a: {
+      //         color: theme("colors.purple.500"),
+      //         "&:hover": {
+      //           color: theme("colors.purple.700"),
+      //         },
+      //         code: { color: theme("colors.purple.400") },
+      //       },
+      //       blockquote: {
+      //         borderLeftColor: theme("colors.brand.700"),
+      //         color: theme("colors.gray.600"),
+      //       },
+      //       "h1,h2,h3,h4": {
+      //         "scroll-margin-top": spacing[32],
+      //       },
+      //       thead: {
+      //         borderBottomColor: theme("colors.gray.200"),
+      //       },
+      //       code: { color: theme("colors.pink.500") },
+      //       "blockquote p:first-of-type::before": false,
+      //       "blockquote p:last-of-type::after": false,
+      //     },
+      //   },
+      //   dark: {
+      //     css: {
+      //       color: theme("colors.gray.200"),
+      //       a: {
+      //         color: theme("colors.purple.400"),
+      //         "&:hover": {
+      //           color: theme("colors.purple.600"),
+      //         },
+      //         code: { color: theme("colors.purple.400") },
+      //       },
+      //       blockquote: {
+      //         borderLeftColor: theme("colors.gray.700"),
+      //         color: theme("colors.gray.300"),
+      //       },
+      //       "h1,h2,h3,h4": {
+      //         color: theme("colors.gray.100"),
+      //         "scroll-margin-top": spacing[32],
+      //       },
+      //       hr: { borderColor: theme("colors.gray.700") },
+      //       ol: {
+      //         li: {
+      //           "&:before": { color: theme("colors.gray.500") },
+      //         },
+      //       },
+      //       ul: {
+      //         li: {
+      //           "&:before": { backgroundColor: theme("colors.gray.500") },
+      //         },
+      //       },
+      //       strong: { color: theme("colors.gray.100") },
+      //       thead: {
+      //         th: {
+      //           color: theme("colors.gray.100"),
+      //         },
+      //         borderBottomColor: theme("colors.gray.600"),
+      //       },
+      //       tbody: {
+      //         tr: {
+      //           borderBottomColor: theme("colors.gray.700"),
+      //         },
+      //       },
+      //     },
+      //   },
+      // }),
     },
   },
   variants: {

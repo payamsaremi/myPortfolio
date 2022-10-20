@@ -20,11 +20,13 @@ export default function BoxCard({ image, title, description, url = "/" }) {
           </div>
         )}
         <div className="ml-2 w-full">
-          <div className="font-normal text-4xl mb-2 z-0 dark:text-gray-200">
+          <h2 className="font-normal text-5xl mb-2 z-0 dark:text-gray-200">
             {title}
-          </div>
+          </h2>
           <div className="flex w-full items-end justify-between">
-            <p className="text-gray-300 text-lg w-full">{description}</p>
+            <p className="text-gray-300 text-lg w-full font-Lato">
+              {description}
+            </p>
           </div>
         </div>
       </div>

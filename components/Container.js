@@ -86,7 +86,9 @@ export default function Container({ children, ...customMeta }) {
       </Head>
 
       <main className="flex flex-col min-h-screen justify-between p-2 ">
-        <Navbar />
+        <div className="py-8 mb-4">
+          <Navbar />
+        </div>
         <motion.div
           variants={variants} // Pass the variant object into Framer Motion
           initial="hidden" // Set the initial state to variants.hidden

@@ -2,6 +2,7 @@ import Container from "../components/Container";
 import { getAllPosts } from "../data/blog/api";
 import BoxCard from "../components/BoxCard";
 import { motion, useAnimationControls } from "framer-motion";
+import PageAlignment from "../components/PageAlignment";
 export default function Home({ posts }) {
   const variants = {
     closed: { opacity: 0 },
@@ -42,7 +43,8 @@ export default function Home({ posts }) {
       title={"Payam Saremi's Blog"}
       description={"My recent works, art and ideas"}
     >
-      <div className="mx-auto max-w-3xl">
+      {/* <div className="mx-auto max-w-3xl"> */}
+      <PageAlignment>
         <div className="mb-2">
           <BoxCard
             image={"/images/me-avatar.png"}
@@ -70,7 +72,9 @@ export default function Home({ posts }) {
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </PageAlignment>
+
+      {/* </div> */}
     </Container>
   );
 }

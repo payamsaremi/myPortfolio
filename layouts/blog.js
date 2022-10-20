@@ -10,27 +10,28 @@ export default function BlogLayout({ children, meta, readingTime }) {
       coverImage={meta.coverImage}
       type="article"
     >
-      <article className="flex flex-col items-start justify-center w-full max-w-3xl mx-auto mb-16 mt-12">
-        <div className="flex justify-between items-baseline w-full">
+      <article className="flex flex-col items-start justify-center w-full max-w-3xl mx-auto mb-16">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-6xl dark:text-gray-100">
+          {meta.title}
+        </h1>
+        <div className="mb-2 flex justify-between items-end w-full">
           <div className="flex flex-row justify-start items-center ">
-            <Avatar image={"/images/payam-avatar.jpg"} size={"35"} />
-            <div className="ml-2">
-              <p className="dark:text-gray-200 text-gray-700 font-mono text-sm mr-2">
-                Payam Saremi
+            <div className="flex">
+              <p className="text-xs font-mono text-gray-600 bg-gray-200 w-fit px-2 py-0.1 rounded-md m-1">
+                {readingTime}
               </p>
-              <p className="text-gray-400 font-mono text-xs">
+              <p className="text-xs font-mono text-gray-600 bg-gray-200 w-fit px-2 py-0.1 rounded-md m-1">
                 {formattedDate(meta.date)}
               </p>
             </div>
           </div>
-          <p className="text-xs font-mono text-gray-400">{readingTime}</p>
         </div>
 
-        <h1 className="mt-7 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-gray-100">
-          {meta.title}
-        </h1>
+        <p className="text-2xl mt-4 text-gray-600 dark:text-gray-100">
+          {meta.excerpt}
+        </p>
 
-        <div className="w-full mt-4 prose lg:prose-lg dark:prose-dark max-w-none dark:text-zinc-300">
+        <div className="w-full mt-4 prose lg:prose-xl dark:prose-dark max-w-none dark:text-zinc-300">
           {children}
         </div>
       </article>
