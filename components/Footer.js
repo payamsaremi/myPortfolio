@@ -11,6 +11,7 @@ export default function Footer() {
           <LinkItem link={"/"}>home</LinkItem>
           <LinkItem link={"/blog"}>blog</LinkItem>
           <LinkItem link={"/projects"}>projects</LinkItem>
+          <LinkItem link={"/blog/about"}>about</LinkItem>
         </div>
         <div className="flex flex-row justify-center md:justify-end items-last w-full md:w-1/3">
           <a href="https://github.com/payamsaremi">

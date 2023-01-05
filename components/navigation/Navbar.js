@@ -20,6 +20,7 @@ export default function Navbar() {
           <NavItem href="/" text="Home" />
           <NavItem href="/blog" text="Blog" />
           <NavItem href="/projects" text="Projects" />
+          <NavItem href="/blog/about" text="About" />
         </div>
         <div className="flex flex-row justify-center md:justify-end items-last w-full md:w-1/3">
           <a href="https://github.com/payamsaremi">

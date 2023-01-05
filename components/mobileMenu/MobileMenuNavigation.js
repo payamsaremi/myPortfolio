@@ -13,6 +13,7 @@ const links = [
   { href: "/", title: "Home" },
   { href: "/blog", title: "Blog" },
   { href: "/projects", title: "Projects" },
+  { href: "/blog/about", title: "About" },
 ];
 
 export default function MobileMenuNavigation({ toggle }) {

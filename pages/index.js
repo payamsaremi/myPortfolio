@@ -50,7 +50,7 @@ export default function Home({ posts }) {
             image={"/images/me-avatar.png"}
             title={"Hey! I'm Payam"}
             description={
-              "Writer, founder and programmer. I have been building products that have been used by millions of users. I code in Javascript, Python & solidity. I write blogs about technologies like Blockchain,Ai & web development. The future will be autonomous and decentralised. let's create the feature we want to live in."
+              "Payam is an experienced software developer and designer with a focus on AI and machine learning. He has a strong background in computer science, web development, and UX/UI design, and is proficient in various programming languages and frameworks. He is passionate about building autonomous and decentralized products and writes about emerging technologies such as blockchain, AI, and web development."
             }
             url={"/"}
           />

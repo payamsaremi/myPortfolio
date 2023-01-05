@@ -12,12 +12,6 @@ export default function MobileMenu() {
     setIsOpen(!isOpen);
   };
 
-  const links = [
-    { href: "/", title: "Home" },
-    { href: "/blog", title: "Blog" },
-    { href: "/projects", title: "Projects" },
-  ];
-
   const menuVariants = {
     closed: {
       opacity: 0,
